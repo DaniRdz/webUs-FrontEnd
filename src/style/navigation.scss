@@ -1,0 +1,31 @@
+.navigation-container {
+  grid-column: s/e;
+  grid-row: nav-s/nav-e;
+
+  display: grid;
+  grid-template-columns: [logo-s] 170px [logo-e links-s] 500px [links-e] 150px [store-info-s] 1fr[store-info-e sigin-s] 160px [sigin-e];
+  align-items: center;
+
+  font-size: 1.5rem;
+
+  .logo {
+    grid-column: logo-s/logo-e;
+  }
+
+  .nav-links {
+    grid-column: links-s/links-e;
+    display: flex;
+    justify-content: space-around;
+  }
+  .store-info {
+    grid-column: store-info-s/store-info-e;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.2rem;
+  }
+  .sigin-singup-links {
+    grid-column: sigin-s/sigin-e;
+    display: flex;
+    justify-content: space-around;
+  }
+}

@@ -9,7 +9,7 @@ import history from "../history";
 export default class App extends Component {
   render() {
     return (
-      <div className="app">
+      <div className="container">
         <NavigationContainer />
         <Router history={history}>
           <Switch>

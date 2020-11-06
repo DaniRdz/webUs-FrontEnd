@@ -8,6 +8,7 @@
 
   font-size: 1.5rem;
 
+  padding: 40px;
   .logo {
     grid-column: logo-s/logo-e;
   }
@@ -27,5 +28,50 @@
     grid-column: sigin-s/sigin-e;
     display: flex;
     justify-content: space-around;
+  }
+}
+
+.logo {
+  font-family: "Frijole", cursive;
+  color: $soft-orage;
+  justify-self: center;
+  align-self: center;
+  .title {
+    font-size: 3rem;
+  }
+  .subtitle {
+    font-size: 1rem;
+  }
+}
+
+.store-info-opennig,
+.store-info-phone {
+  display: flex;
+  align-items: center;
+
+  .icon {
+    font-size: 3rem;
+    margin-right: 10px;
+    color: $soft-orage;
+  }
+}
+
+.store-info-opennig-schedule,
+.store-info-phone-number {
+  display: grid;
+  justify-items: center;
+  row-gap: 7px;
+
+  .phone-title,
+  .hours {
+    color: $soft-orage;
+  }
+}
+
+.link {
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+  &:hover {
+    color: $soft-orage;
   }
 }

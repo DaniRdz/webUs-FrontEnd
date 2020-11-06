@@ -2,3 +2,26 @@
   grid-column: s/e;
   grid-row: content-s/content-e;
 }
+.welcome-page {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+.backgroud-img,
+.backgroud-color,
+.welcome-msg {
+  width: auto;
+  height: calc(100vh - 120px);
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+}
+
+.backgroud-color {
+  background-color: #fffbf3;
+  opacity: 0.6;
+}
+.welcome-msg {
+  position: absolute;
+  z-index: 1px;
+}

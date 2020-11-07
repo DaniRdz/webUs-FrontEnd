@@ -16,8 +16,12 @@ class Home extends Component {
             }}
           />
           <div className="backgroud-color" />
-          <div className="welcome-msg">
-            <h1>Hola somo webUs</h1>
+          <div className="welcome-container">
+            <div className="welcome-msg">
+              "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
+              consectetur, adipisci velit..."
+            </div>
+            <button className="order-button">Order</button>
           </div>
         </div>
       </div>

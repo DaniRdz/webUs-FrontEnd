@@ -9,8 +9,8 @@
 }
 
 .backgroud-img,
-.backgroud-color,
-.welcome-msg {
+.welcome-container,
+.backgroud-color {
   width: auto;
   height: calc(100vh - 120px);
   grid-column: 1/-1;
@@ -18,10 +18,22 @@
 }
 
 .backgroud-color {
-  background-color: #fffbf3;
+  background-color: $soft-white;
   opacity: 0.6;
 }
-.welcome-msg {
-  position: absolute;
-  z-index: 1px;
+.welcome-container {
+  display: grid;
+  grid-template-columns: [s] 1fr [m] 1fr [e];
+  grid-template-rows: [s] 1fr [m] 1fr [e];
+
+  position: relative;
+
+  .welcome-msg {
+    grid-column: m/e;
+    grid-row: s/m;
+  }
+  .order-button {
+    grid-column: s/m;
+    grid-row: m/e;
+  }
 }

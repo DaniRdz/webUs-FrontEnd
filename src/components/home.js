@@ -18,10 +18,16 @@ class Home extends Component {
           <div className="backgroud-color" />
           <div className="welcome-container">
             <div className="welcome-msg">
-              "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
+              "Neque porro quisquam est qui <br /> <br />
+              dolorem ipsum quia dolor sit amet, <br /> <br />
               consectetur, adipisci velit..."
             </div>
-            <button className="order-button">Order</button>
+            <div className="btn-container">
+              <p className="grettings-msg">
+                Neque porro quisquam est qui dolorem ipsum quia dolor sit amet
+              </p>
+              <button className="order-button">Order Now!</button>
+            </div>
           </div>
         </div>
       </div>

@@ -32,8 +32,50 @@
     grid-column: m/e;
     grid-row: s/m;
   }
-  .order-button {
+  .btn-container {
     grid-column: s/m;
     grid-row: m/e;
+  }
+}
+
+.welcome-msg {
+  align-self: center;
+  justify-self: center;
+  font-size: 3.5rem;
+}
+
+.btn-container {
+  align-self: self-end;
+  justify-self: center;
+
+  .grettings-msg {
+    font-family: "Roboto", sans-serif;
+    font-size: 2rem;
+  }
+}
+
+.btn-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.order-button {
+  width: 175px;
+  height: 50px;
+  border-radius: 50px;
+
+  background-color: $soft-orage;
+  color: $soft-white;
+  border: 1px solid $beauty-black;
+
+  box-shadow: 0px 10px 5px 0px rgba(50, 50, 50, 0.32);
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    transform: translateY(4px);
   }
 }

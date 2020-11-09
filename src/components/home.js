@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import ContactInfo from "./contact";
+import Contact from "./contact";
 
 import backgroudPicture from "../../static/assets/images/backgrounds/salchipapa.png";
 
@@ -32,7 +32,7 @@ class Home extends Component {
             </div>
           </div>
         </div>
-        <ContactInfo />
+        <Contact />
       </div>
     );
   }

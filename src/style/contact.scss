@@ -1,0 +1,49 @@
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.contact-info-container {
+  height: 400px;
+  width: 300px;
+  justify-self: center;
+  align-self: center;
+  border: 1px solid $beauty-black;
+  border-radius: 50px;
+
+  box-shadow: 11px 11px 10px 0px rgba(50, 50, 50, 0.6);
+}
+
+.contact-info-container {
+  display: grid;
+  justify-content: center;
+}
+
+.contact-info-wrapper {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+
+  .address-info,
+  .phone-info,
+  .schedule-info {
+    align-self: center;
+    &-title {
+      font-size: 3rem;
+    }
+    &-description {
+      font-family: "Roboto", "sans-serif";
+      font-size: 1.5rem;
+      margin-top: 15px;
+    }
+  }
+}
+
+.map {
+  iframe {
+    border-radius: 50px;
+    box-shadow: 11px 11px 10px 0px rgba(50, 50, 50, 0.6);
+  }
+}

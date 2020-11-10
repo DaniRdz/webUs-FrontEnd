@@ -5,9 +5,38 @@
 
 .footer-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: [logo-s]1fr[logo-e copyright-s] 3fr [copyright-e media-s] 1fr [media-e];
 
   align-items: center;
 
   background-color: $beauty-black;
+
+  .logo {
+    grid-column: logo-s/logo-e;
+    justify-self: center;
+  }
+
+  .copyright-wrapper {
+    grid-column: copyright-s/copyright-e;
+    justify-self: center;
+    color: $soft-orage;
+    font-size: 1rem;
+  }
+
+  .media-links-wrapper {
+    grid-column: media-s/media-e;
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+
+.media-links-wrapper {
+  i {
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+
+    &:hover {
+      color: $soft-white;
+    }
+  }
 }

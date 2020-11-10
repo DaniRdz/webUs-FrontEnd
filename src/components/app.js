@@ -3,6 +3,7 @@ import { Router, Switch, Route } from "react-router-dom";
 
 import Home from "./home";
 import NavigationContainer from "./navigation-container";
+import Footer from "./footer";
 
 import history from "../history";
 
@@ -16,6 +17,7 @@ export default class App extends Component {
             <Route exact path="/" component={Home} />
           </Switch>
         </Router>
+        <Footer />
       </div>
     );
   }

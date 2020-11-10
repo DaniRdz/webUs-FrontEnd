@@ -11,6 +11,8 @@
   padding: 40px;
   .logo {
     grid-column: logo-s/logo-e;
+    justify-self: center;
+    align-self: center;
   }
 
   .nav-links {

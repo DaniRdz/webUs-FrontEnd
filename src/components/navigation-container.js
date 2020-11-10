@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 
+import Logo from "./logo";
+
 class NavigationContainer extends Component {
   render() {
     return (
       <div className="navigation-container">
-        <div className="logo">
-          <div className="title">WebUs</div>
-          <div className="subtitle">con chalchicha</div>
-        </div>
+        <Logo />
         <div className="nav-links">
           <a className="link">Home</a>
           <a className="link">Menu</a>

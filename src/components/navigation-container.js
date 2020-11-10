@@ -11,7 +11,9 @@ class NavigationContainer extends Component {
           <a className="link">Home</a>
           <a className="link">Menu</a>
           <a className="link">Acerca de Nosotros</a>
-          <a className="link">Contacto</a>
+          <a href="#contact" className="link">
+            Contacto
+          </a>
           {/* <a>Informacion de cuenta</a> */}
         </div>
         <div className="store-info">

@@ -2,3 +2,20 @@
   grid-column: s/e;
   grid-row: content-s/content-e;
 }
+
+.sign-in-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: calc(100vh - 180px);
+
+  .welcome-img {
+    align-self: center;
+    border-radius: 50px;
+    height: 500px;
+  }
+
+  .sign-in-form {
+    align-self: center;
+    justify-self: center;
+  }
+}

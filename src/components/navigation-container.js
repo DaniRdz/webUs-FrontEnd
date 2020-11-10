@@ -2,15 +2,26 @@ import React, { Component } from "react";
 
 import Logo from "./logo";
 
+import history from "../history";
+
 class NavigationContainer extends Component {
   render() {
     return (
       <div className="navigation-container">
         <Logo />
         <div className="nav-links">
-          <a className="link">Home</a>
-          <a className="link">Menu</a>
-          <a className="link">Acerca de Nosotros</a>
+          <a onClick={() => history.push("/")} className="link">
+            Home
+          </a>
+          <a onClick={() => history.push("/menu")} className="link">
+            Menu
+          </a>
+          <a
+            onClick={() => history.push("/acerca-de-nosotros")}
+            className="link"
+          >
+            Acerca de Nosotros
+          </a>
           <a href="#contact" className="link">
             Contacto
           </a>
@@ -33,8 +44,12 @@ class NavigationContainer extends Component {
           </div>
         </div>
         <div className="sigin-singup-links">
-          <a className="link">Login</a>
-          <a className="link">Register</a>
+          <a onClick={() => history.push("/sign-in")} className="link">
+            Login
+          </a>
+          <a onClick={() => history.push("/register")} className="link">
+            Register
+          </a>
         </div>
       </div>
     );

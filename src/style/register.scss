@@ -1,0 +1,22 @@
+.register-container {
+  grid-column: s/e;
+  grid-row: content-s/content-e;
+}
+
+.register-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+
+  height: calc(100vh - 180px);
+
+  .register-img {
+    align-self: center;
+    border-radius: 50px;
+    height: 500px;
+  }
+
+  .register-form {
+    align-self: center;
+    justify-self: center;
+  }
+}

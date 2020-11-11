@@ -2,9 +2,9 @@ import React, { Component } from "react";
 
 export class FormInput extends Component {
   render() {
-    const { type, placeholder, input } = this.props;
+    const { className, type, placeholder, input } = this.props;
     return (
-      <div className="form-input">
+      <div className={`form-input ${className}`}>
         <input
           className="input"
           type={type}
@@ -18,9 +18,9 @@ export class FormInput extends Component {
 
 export class FormButton extends Component {
   render() {
-    const { type, title, onClick, input } = this.props;
+    const { className, type, title, onClick, input } = this.props;
     return (
-      <div className="form-btn">
+      <div className={`form-btn ${className}`}>
         <button className="btn" type={type} onClick={onClick} {...input}>
           {title}
         </button>

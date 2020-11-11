@@ -3,6 +3,8 @@ import { reduxForm, Field } from "redux-form";
 
 import { FormInput, FormButton } from "./form-fields";
 
+import history from "../history";
+
 class SignInForm extends Component {
   render() {
     const { handleSubmit } = this.props;
@@ -31,6 +33,16 @@ class SignInForm extends Component {
           name="login"
           component={FormButton}
         />
+        <div className="sign-in-form-register">
+          ¿No tienes cuenta?{" "}
+          <a
+            onClick={() => {
+              history.push("/register");
+            }}
+          >
+            Registrate.
+          </a>
+        </div>
       </form>
     );
   }

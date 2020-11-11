@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import SignInForm from "./sign-in-form";
 
-import wallpaper from "../../static/assets/images/wallpapers/salchipulpos-login.jpg";
+import wallpaper from "../../../static/assets/images/wallpapers/salchipulpos-login.jpg";
 
 class SignIn extends Component {
   onSubmit = (fields) => {

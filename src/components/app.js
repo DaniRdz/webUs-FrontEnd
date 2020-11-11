@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Router, Switch, Route } from "react-router-dom";
 
 import Home from "./home";
-import SingIn from "./sign-in";
+import SingIn from "./loginPage/sign-in";
 import NavigationContainer from "./navigation-container";
 import Footer from "./footer";
 

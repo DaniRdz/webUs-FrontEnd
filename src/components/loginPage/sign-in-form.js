@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { reduxForm, Field } from "redux-form";
 
-import { FormInput, FormButton } from "./form-fields";
+import { FormInput, FormButton } from "../form-fields";
 
-import history from "../history";
+import history from "../../history";
 
 class SignInForm extends Component {
   render() {
@@ -34,7 +34,7 @@ class SignInForm extends Component {
           component={FormButton}
         />
         <div className="sign-in-form-register">
-          ¿No tienes cuenta?{" "}
+          ¿No tienes cuenta?
           <a
             onClick={() => {
               history.push("/register");

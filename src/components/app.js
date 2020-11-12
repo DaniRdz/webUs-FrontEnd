@@ -5,6 +5,7 @@ import Home from "./home";
 import SingIn from "./login-page/sign-in";
 import Register from "./register-page/register";
 import AboutUs from "./about-us-page/about-us";
+import Menu from "./menu-page/menu";
 import NavigationContainer from "./navigation-container";
 import Footer from "./footer";
 
@@ -21,6 +22,7 @@ export default class App extends Component {
             <Route exact path="/sign-in" component={SingIn} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/acerca-de-nosotros" component={AboutUs} />
+            <Route exact path="/menu" component={Menu} />
           </Switch>
         </Router>
         <Footer />

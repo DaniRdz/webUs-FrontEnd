@@ -1,0 +1,8 @@
+.menu-container {
+  grid-column: s/e;
+  grid-row: content-s/content-e;
+}
+
+.menu-container {
+  height: calc(100% - 180px);
+}

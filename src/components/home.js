@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import Contact from "./contactPage/contact";
+import Contact from "./contact-page/contact";
 
 import backgroudPicture from "../../static/assets/images/backgrounds/salchipapa.png";
 

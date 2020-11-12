@@ -7,6 +7,8 @@
   display: grid;
   grid-template-columns: 1fr 2fr;
 
+  column-gap: 80px;
+
   height: calc(100vh - 180px);
 
   .register-img {
@@ -18,5 +20,92 @@
   .register-form {
     align-self: center;
     justify-self: center;
+  }
+}
+
+.register-form {
+  display: grid;
+
+  grid-template-columns: [s] 1fr [m] 1fr [e];
+  grid-template-rows: [title-s] 1fr [title-e name-s] 1fr [name-e email-s] 1fr [email-e password-s] 1fr [password-e] 1fr;
+
+  height: 500px;
+  width: 100%;
+  border: 1px solid $beauty-black;
+  border-radius: 50px;
+
+  &-title,
+  &-name,
+  &-email,
+  &-password,
+  &-btn,
+  &-password-requires {
+    align-self: center;
+    justify-self: center;
+  }
+
+  &-title {
+    grid-column: s/e;
+    grid-row: title-s/title-e;
+  }
+
+  &-name {
+    grid-column: s/m;
+    grid-row: name-s/name-e;
+  }
+
+  &-email {
+    grid-column: s/m;
+    grid-row: email-s/email-e;
+  }
+
+  &-password {
+    grid-column: s/m;
+    grid-row: password-s/password-e;
+  }
+
+  &-password-requires {
+    grid-column: m/e;
+    grid-row: name-s/email-e;
+  }
+
+  &-btn {
+    grid-column: m/e;
+    grid-row: password-s/password-e;
+  }
+}
+
+.register-form {
+  &-title {
+    font-size: 4rem;
+  }
+}
+
+.register-form-password-requires {
+  display: grid;
+
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 3fr;
+  row-gap: 20px;
+
+  height: 100%;
+
+  .title {
+    align-self: end;
+    font-size: 2rem;
+    text-decoration: underline;
+  }
+
+  .requires {
+    justify-self: center;
+    font-size: 1.5rem;
+
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+
+    .require {
+      align-self: center;
+      justify-self: center;
+    }
   }
 }

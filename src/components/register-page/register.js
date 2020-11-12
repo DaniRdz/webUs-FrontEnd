@@ -2,9 +2,12 @@ import React, { Component } from "react";
 
 import RegisterForm from "./register-form";
 
-import wallpaper from "../../static/assets/images/wallpapers/papas-register.jpg";
+import wallpaper from "../../../static/assets/images/wallpapers/papas-register.jpg";
 
 class Register extends Component {
+  onSubmit = (fields) => {
+    console.log(fields);
+  };
   render() {
     return (
       <div className="register-container">
@@ -16,7 +19,7 @@ class Register extends Component {
             backgroundSize: "cover",
           }}
         />
-        <RegisterForm />
+        <RegisterForm onSubmit={this.onSubmit} />
       </div>
     );
   }

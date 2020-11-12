@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { Router, Switch, Route } from "react-router-dom";
 
 import Home from "./home";
-import SingIn from "./loginPage/sign-in";
-import Register from "./register";
+import SingIn from "./login-page/sign-in";
+import Register from "./register-page/register";
 import NavigationContainer from "./navigation-container";
 import Footer from "./footer";
 

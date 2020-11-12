@@ -4,5 +4,23 @@
 }
 
 .menu-container {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
   height: calc(100% - 180px);
+
+  .fiter-bar-links-container {
+    justify-self: center;
+  }
+}
+
+.filter-links {
+  display: flex;
+  justify-content: space-between;
+  width: 600px;
+
+  font-size: 2.5rem;
+}
+
+.active-link {
+  color: $soft-orage;
 }

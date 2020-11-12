@@ -4,6 +4,7 @@ import { Router, Switch, Route } from "react-router-dom";
 import Home from "./home";
 import SingIn from "./login-page/sign-in";
 import Register from "./register-page/register";
+import AboutUs from "./about-us-page/about-us";
 import NavigationContainer from "./navigation-container";
 import Footer from "./footer";
 
@@ -19,6 +20,7 @@ export default class App extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/sign-in" component={SingIn} />
             <Route exact path="/register" component={Register} />
+            <Route exact path="/acerca-de-nosotros" component={AboutUs} />
           </Switch>
         </Router>
         <Footer />

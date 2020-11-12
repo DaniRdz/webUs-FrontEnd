@@ -1,0 +1,30 @@
+.about-us-container {
+  grid-column: s/e;
+  grid-row: content-s/content-e;
+}
+
+.about-us-container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  height: calc(100vh - 180px);
+
+  column-gap: 80px;
+
+  .about-us-img {
+    align-self: center;
+    height: 500px;
+  }
+
+  .about-us-info {
+    display: grid;
+
+    grid-template-rows: 1fr 5fr;
+  }
+}
+
+.about-us-info {
+  .about-us-content {
+    font-family: "Roboto";
+    font-size: 2rem;
+  }
+}

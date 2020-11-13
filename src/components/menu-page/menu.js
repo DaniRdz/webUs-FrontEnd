@@ -1,8 +1,14 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
 import FilterBar from "./filter-bar-link";
 
+import * as actions from "../../actions";
+
 class Menu extends Component {
+  componentDidMount() {
+    this.props.fetchMenuProducts();
+  }
   render() {
     return (
       <div className="menu-container">
@@ -13,4 +19,4 @@ class Menu extends Component {
   }
 }
 
-export default Menu;
+export default connect(null, actions)(Menu);

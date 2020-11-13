@@ -1,5 +1,9 @@
+import axios from "axios";
+
 export function fetchMenuProducts() {
   return function (dispach) {
-    console.log("Hello my beautiful");
+    axios.get("http://localhost:8080/products").then((response) => {
+      console.log(response.data.products);
+    });
   };
 }

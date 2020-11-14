@@ -13,10 +13,25 @@ class Menu extends Component {
     return (
       <div className="menu-container">
         <FilterBar />
-        <h1 className="menu-products">products goes here </h1>
+        {this.props.menuProducts.map((product) => {
+          return (
+            <div key={product._id}>
+              <div>{product.title}</div>
+              <div> {product.description} </div>
+            </div>
+          );
+        })}
       </div>
     );
   }
 }
 
-export default connect(null, actions)(Menu);
+function mapStateToProps(state) {
+  const { menuProducts } = state.menuProducts;
+
+  return {
+    menuProducts,
+  };
+}
+
+export default connect(mapStateToProps, actions)(Menu);

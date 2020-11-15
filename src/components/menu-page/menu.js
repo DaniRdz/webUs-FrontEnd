@@ -27,7 +27,7 @@ class Menu extends Component {
 }
 
 function mapStateToProps(state) {
-  const { menuProducts } = state.menuProducts;
+  const { menuProducts } = state.menu;
 
   return {
     menuProducts,

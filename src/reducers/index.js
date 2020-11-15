@@ -1,11 +1,11 @@
 import { combineReducers } from "redux";
 import { reducer as form } from "redux-form";
 
-import menuProducts from "./menuProductsReducer";
+import menu from "./menuReducer";
 
 const rootReducer = combineReducers({
   form,
-  menuProducts,
+  menu,
 });
 
 export default rootReducer;

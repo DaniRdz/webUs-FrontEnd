@@ -1,6 +1,77 @@
 .product {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
   width: 400px;
   height: 500px;
 
-  border: solid 1px #000000;
+  border: solid 1px $beauty-black;
+  border-radius: 50px;
+}
+.product {
+  &-img {
+    border-radius: 50px 50px 0px 0px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  &-info {
+    border-top: solid 1px $beauty-black;
+  }
+}
+
+.product-info {
+  display: grid;
+  grid-template-columns: [s] 1fr [m] 1fr [e];
+  grid-template-rows: [title-s] 1fr [title-e line-s] 1fr [line-e description-s] 1fr [description-e price-s] 1fr [price-e];
+
+  &-title {
+    grid-column: s/e;
+    grid-row: title-s/title-e;
+  }
+
+  &-line {
+    grid-column: s/e;
+    grid-row: line-s/line-e;
+  }
+
+  &-description {
+    grid-column: s/e;
+    grid-row: description-s/description-e;
+  }
+
+  &-price {
+    grid-column: s/m;
+    grid-row: price-s/price-e;
+  }
+
+  &-btn {
+    grid-column: m/e;
+    grid-row: price-s/price-e;
+  }
+}
+
+.product-info {
+  & > * {
+    justify-self: center;
+  }
+  &-title {
+    font-size: 3rem;
+    align-self: center;
+  }
+
+  &-line {
+    width: 50%;
+    border-top: solid 1px $beauty-black;
+  }
+
+  &-description {
+    font-size: 2rem;
+    align-self: center;
+  }
+
+  &-price {
+  }
+
+  &-btn {
+  }
 }

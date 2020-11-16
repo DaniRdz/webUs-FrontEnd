@@ -13,7 +13,7 @@ class Menu extends Component {
     return (
       <div className="menu-container">
         <FilterBar />
-        {this.props.menuProducts.map((product) => {
+        {this.props.filteredProducts.map((product) => {
           return (
             <div key={product._id}>
               <div>{product.title}</div>
@@ -27,10 +27,10 @@ class Menu extends Component {
 }
 
 function mapStateToProps(state) {
-  const { menuProducts } = state.menu;
+  const { filteredProducts } = state.menu;
 
   return {
-    menuProducts,
+    filteredProducts,
   };
 }
 

@@ -2,11 +2,13 @@ import {
   SET_MENU_PRODUCTS,
   SET_MENU_CATEGORIES,
   CHANGE_ACTIVE_LINK,
+  FILTER_PRODUCTS_WITH_CATEGORY_ID,
 } from "../actions/types";
 
 const INIT_STATE = {
   menuProducts: [],
   categories: [],
+  filteredProducts: [],
 };
 
 export default function (state = INIT_STATE, action) {
@@ -27,6 +29,18 @@ export default function (state = INIT_STATE, action) {
       });
 
       return { ...state, categories };
+
+    case FILTER_PRODUCTS_WITH_CATEGORY_ID:
+      console.log(action.payload, "holaaaaaa");
+
+      var filteredProducts = [];
+      state.menuProducts.map((product) => {
+        if (product.belogsTo.includes(action.payload)) {
+          filteredProducts.push(product);
+        }
+      });
+
+      return { ...state, filteredProducts };
 
     default:
       return state;

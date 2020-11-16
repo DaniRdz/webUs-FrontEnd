@@ -2,6 +2,7 @@ import {
   SET_MENU_PRODUCTS,
   SET_MENU_CATEGORIES,
   CHANGE_ACTIVE_LINK,
+  FILTER_PRODUCTS_WITH_CATEGORY_ID,
 } from "./types";
 
 import axios from "axios";
@@ -33,6 +34,13 @@ export function fetchMenuCategories() {
 export function changeActiveLink(_id) {
   return {
     type: CHANGE_ACTIVE_LINK,
+    payload: _id,
+  };
+}
+
+export function filterProductsWithCategoryId(_id) {
+  return {
+    type: FILTER_PRODUCTS_WITH_CATEGORY_ID,
     payload: _id,
   };
 }

@@ -13,7 +13,10 @@ class FilterBar extends Component {
       return (
         <a
           key={link._id}
-          onClick={() => this.props.changeActiveLink(link._id)}
+          onClick={() => {
+            this.props.changeActiveLink(link._id),
+              this.props.filterProductsWithCategoryId(link._id);
+          }}
           className={`filter-link ${link.active ? "active-link" : ""}`}
         >
           {link.title}

@@ -28,7 +28,12 @@ class Home extends Component {
               <p className="grettings-msg">
                 Neque porro quisquam est qui dolorem ipsum quia dolor sit amet
               </p>
-              <button className="order-button">Order Now!</button>
+              <button
+                className="order-button"
+                onClick={() => this.props.history.push("/menu")}
+              >
+                ¡Ordenar Ahora!
+              </button>
             </div>
           </div>
         </div>

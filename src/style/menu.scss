@@ -5,11 +5,20 @@
 
 .menu-container {
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: [link-s] 100px [links-e products-s] 1fr [products-e];
   height: calc(100% - 180px);
 
   .fiter-bar-links-container {
     justify-self: center;
+    grid-row: link-s/link-e;
+    grid-column: 1/-1;
+  }
+
+  .products {
+    justify-self: center;
+    grid-row: products-s/products-e;
+    grid-column: 1/-1;
   }
 }
 
@@ -23,4 +32,11 @@
 
 .active-link {
   color: $soft-orage;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 80px;
+  margin-bottom: 80px;
 }

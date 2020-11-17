@@ -1,6 +1,13 @@
 import React, { Component } from "react";
 
 class MenuProduct extends Component {
+  handleAddtoCart() {
+    if (document.getElementById("menu-cart").classList.contains("cart-hiden")) {
+      document.getElementById("menu-cart").classList.remove("cart-hiden");
+    } else {
+      document.getElementById("menu-cart").classList.add("cart-hiden");
+    }
+  }
   render() {
     const { _id, title, description, price, imgURL } = this.props;
     return (
@@ -11,7 +18,7 @@ class MenuProduct extends Component {
           <div className="product-info-line"></div>
           <div className="product-info-description">{description}</div>
           <div className="product-info-price">${price}</div>
-          <button className="product-info-btn" onClick={() => console.log(_id)}>
+          <button className="product-info-btn" onClick={this.handleAddtoCart}>
             Ordenar
           </button>
         </div>

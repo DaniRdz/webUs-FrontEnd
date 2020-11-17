@@ -16,11 +16,11 @@ class Menu extends Component {
       <div className="menu-container">
         <FilterBar />
         <Cart />
-        {/* <div className="products">
+        <div className="products">
           {this.props.filteredProducts.map((product) => {
             return <MenuProduct key={product._id} {...product} />;
           })}
-        </div> */}
+        </div>
       </div>
     );
   }

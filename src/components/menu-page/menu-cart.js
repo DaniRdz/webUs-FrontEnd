@@ -3,7 +3,7 @@ import React, { Component } from "react";
 export default class Cart extends Component {
   render() {
     return (
-      <div className="menu-cart">
+      <div id="menu-cart" className="menu-cart cart-hiden">
         <div className="menu-cart-icon">
           <i className="far fa-times-circle"></i>
         </div>

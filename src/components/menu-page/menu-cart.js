@@ -1,12 +1,23 @@
 import React, { Component } from "react";
 
+import CartButton from "./cart-button";
+
 export default class Cart extends Component {
+  handleAddtoCart() {
+    if (document.getElementById("menu-cart").classList.contains("cart-hiden")) {
+      document.getElementById("menu-cart").classList.remove("cart-hiden");
+    } else {
+      document.getElementById("menu-cart").classList.add("cart-hiden");
+    }
+  }
   render() {
     return (
       <div id="menu-cart" className="menu-cart cart-hiden">
-        <div className="menu-cart-icon">
-          <i className="far fa-times-circle"></i>
-        </div>
+        <CartButton
+          className="menu-cart-btn"
+          icon="far fa-times-circle"
+          onClick={this.handleAddtoCart}
+        />
         <div className="menu-cart-content">
           <div className="menu-cart-title">Title goes here</div>
           <div className="menu-cart-footer">Footer</div>

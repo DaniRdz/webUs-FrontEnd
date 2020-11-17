@@ -26,6 +26,13 @@
     grid-row: link-s/product-e;
     grid-column: 1/-1;
   }
+  .menu-container-btn {
+    position: relative;
+    justify-self: end;
+    align-self: start;
+    grid-row: link-s/link-e;
+    grid-column: 1/-1;
+  }
 }
 
 .filter-links {

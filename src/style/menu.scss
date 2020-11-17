@@ -20,6 +20,12 @@
     grid-row: products-s/products-e;
     grid-column: 1/-1;
   }
+
+  .menu-cart {
+    justify-self: end;
+    grid-row: link-s/product-e;
+    grid-column: 1/-1;
+  }
 }
 
 .filter-links {

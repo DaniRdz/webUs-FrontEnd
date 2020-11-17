@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 
 import FilterBar from "./filter-bar-link";
 import MenuProduct from "./menu-product";
+import Cart from "./menu-cart";
 
 import * as actions from "../../actions";
 
@@ -14,11 +15,12 @@ class Menu extends Component {
     return (
       <div className="menu-container">
         <FilterBar />
-        <div className="products">
+        <Cart />
+        {/* <div className="products">
           {this.props.filteredProducts.map((product) => {
             return <MenuProduct key={product._id} {...product} />;
           })}
-        </div>
+        </div> */}
       </div>
     );
   }

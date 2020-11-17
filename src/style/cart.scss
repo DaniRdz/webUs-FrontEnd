@@ -1,11 +1,11 @@
 .menu-cart {
   display: grid;
   grid-template-columns: [s] 1fr [e];
-  grid-template-rows: [icon-s] 40px [icon-e content-s]1fr[content-e];
+  grid-template-rows: [icon-s] 40px [icon-e content-s] 1fr [content-e];
   row-gap: 20px;
 
   width: 500px;
-  height: 640px;
+  margin-bottom: 30px;
 }
 
 .menu-cart {

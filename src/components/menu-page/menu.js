@@ -13,6 +13,22 @@ class Menu extends Component {
     this.props.fetchMenuProducts();
   }
 
+  renderProducts() {
+    if (this.props.filteredProducts.length === 0) {
+      {
+        return this.props.menuProducts.map((product) => {
+          return <MenuProduct key={product._id} {...product} />;
+        });
+      }
+    } else {
+      {
+        return this.props.filteredProducts.map((product) => {
+          return <MenuProduct key={product._id} {...product} />;
+        });
+      }
+    }
+  }
+
   handleAddtoCart() {
     if (document.getElementById("menu-cart").classList.contains("cart-hiden")) {
       document.getElementById("menu-cart").classList.remove("cart-hiden");
@@ -32,21 +48,18 @@ class Menu extends Component {
           }}
         />
         <Cart />
-        <div className="products">
-          {this.props.filteredProducts.map((product) => {
-            return <MenuProduct key={product._id} {...product} />;
-          })}
-        </div>
+        <div className="products">{this.renderProducts()}</div>
       </div>
     );
   }
 }
 
 function mapStateToProps(state) {
-  const { filteredProducts } = state.menu;
+  const { filteredProducts, menuProducts } = state.menu;
 
   return {
     filteredProducts,
+    menuProducts,
   };
 }
 

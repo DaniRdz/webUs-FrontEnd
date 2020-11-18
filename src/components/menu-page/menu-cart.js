@@ -19,7 +19,8 @@ export default class Cart extends Component {
           onClick={this.handleAddtoCart}
         />
         <div className="menu-cart-content">
-          <div className="menu-cart-title">Title goes here</div>
+          <div className="menu-cart-title">Pedido (2)</div>
+          <div className="menu-cart-products">Product goes here</div>
           <div className="menu-cart-footer">Footer</div>
         </div>
       </div>

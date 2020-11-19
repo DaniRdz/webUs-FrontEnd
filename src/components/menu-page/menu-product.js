@@ -1,8 +1,14 @@
 import React, { Component } from "react";
 
 class MenuProduct extends Component {
+  handleAddtoCart = () => {
+    const { _id } = this.props;
+    this.props.onClick();
+    console.log(_id);
+  };
   render() {
-    const { _id, title, description, price, imgURL, onClick } = this.props;
+    const { title, description, price, imgURL } = this.props;
+
     return (
       <div className="product">
         <img className="product-img" src={imgURL} />
@@ -11,7 +17,7 @@ class MenuProduct extends Component {
           <div className="product-info-line"></div>
           <div className="product-info-description">{description}</div>
           <div className="product-info-price">${price}</div>
-          <button className="product-info-btn" onClick={onClick}>
+          <button className="product-info-btn" onClick={this.handleAddtoCart}>
             Ordenar
           </button>
         </div>

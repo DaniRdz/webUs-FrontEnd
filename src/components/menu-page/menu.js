@@ -9,6 +9,13 @@ import CartButton from "./cart-button";
 import * as actions from "../../actions";
 
 class Menu extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      showCart: false,
+    };
+  }
   componentDidMount() {
     this.props.fetchMenuProducts();
   }
@@ -17,23 +24,35 @@ class Menu extends Component {
     if (this.props.filteredProducts.length === 0) {
       {
         return this.props.menuProducts.map((product) => {
-          return <MenuProduct key={product._id} {...product} />;
+          return (
+            <MenuProduct
+              onClick={() => this.handleAddtoCart()}
+              key={product._id}
+              {...product}
+            />
+          );
         });
       }
     } else {
       {
         return this.props.filteredProducts.map((product) => {
-          return <MenuProduct key={product._id} {...product} />;
+          return (
+            <MenuProduct
+              onClick={() => this.handleAddtoCart()}
+              key={product._id}
+              {...product}
+            />
+          );
         });
       }
     }
   }
 
   handleAddtoCart() {
-    if (document.getElementById("menu-cart").classList.contains("cart-hiden")) {
-      document.getElementById("menu-cart").classList.remove("cart-hiden");
+    if (!this.state.showCart) {
+      this.setState({ showCart: true });
     } else {
-      document.getElementById("menu-cart").classList.add("cart-hiden");
+      this.setState({ showCart: false });
     }
   }
   render() {
@@ -42,12 +61,14 @@ class Menu extends Component {
         <FilterBar />
         <CartButton
           className="menu-container-btn"
-          icon="fas fa-utensils"
+          icon={
+            !this.state.showCart ? "fas fa-utensils" : "far fa-times-circle"
+          }
           onClick={() => {
             this.handleAddtoCart();
           }}
         />
-        <Cart />
+        {this.state.showCart ? <Cart /> : null}
         <div className="products">{this.renderProducts()}</div>
       </div>
     );

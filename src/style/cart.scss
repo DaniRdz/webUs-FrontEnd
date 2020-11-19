@@ -1,28 +1,28 @@
 .menu-cart {
   display: grid;
   grid-template-columns: [s] 1fr [e];
-  grid-template-rows: [icon-s] 40px [icon-e content-s] 1fr [content-e];
+  grid-template-rows: [btn-s] 40px [btn-e content-s] 1fr [content-e];
   row-gap: 20px;
 
   width: 500px;
-  margin-bottom: 30px;
+
+  &-btn {
+    grid-row: btn-s/btn-e;
+  }
+
+  &-content {
+    grid-row: content-s/content-e;
+    margin-bottom: 30px;
+  }
 }
 
 .menu-cart {
-  &-btn {
-    justify-self: end;
-    z-index: 1;
-  }
   &-content {
     background-color: $soft-white;
     opacity: 0.9;
     border-radius: 50px 0px 0px 50px;
     border: solid 3px $beauty-black;
   }
-}
-
-.cart-hiden {
-  transform: translate(555px);
 }
 
 .cart-btn {

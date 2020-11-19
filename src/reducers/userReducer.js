@@ -1,4 +1,4 @@
-import { ADD_CART_PRODUCT } from "../actions/types";
+import { ADD_CART_PRODUCT, SET_CART_PRODUCTS } from "../actions/types";
 
 const INITIAL_STATE = {
   cartProducts: [],
@@ -6,6 +6,9 @@ const INITIAL_STATE = {
 
 export default function (state = INITIAL_STATE, action) {
   switch (action.type) {
+    case SET_CART_PRODUCTS:
+      return { ...state, cartProducts: action.payload };
+
     case ADD_CART_PRODUCT:
       var exists = false;
       const newCP = action.payload;

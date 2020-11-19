@@ -5,7 +5,7 @@ import {
   filterProductsWithCategoryId,
 } from "./menu";
 
-import { addCartProduct } from "./user";
+import { addCartProduct, setCartProducts } from "./user";
 
 export {
   fetchMenuProducts,
@@ -13,4 +13,5 @@ export {
   changeActiveLink,
   filterProductsWithCategoryId,
   addCartProduct,
+  setCartProducts,
 };

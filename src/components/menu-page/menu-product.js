@@ -1,10 +1,13 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+
+import * as actions from "../../actions";
 
 class MenuProduct extends Component {
   handleAddtoCart = () => {
-    const { _id } = this.props;
+    const { _id, title, description, price, imgURL } = this.props;
     this.props.onClick();
-    console.log(_id);
+    this.props.addCartProduct({ _id, title, description, price, imgURL });
   };
   render() {
     const { title, description, price, imgURL } = this.props;
@@ -25,5 +28,6 @@ class MenuProduct extends Component {
     );
   }
 }
+MenuProduct = connect(null, actions)(MenuProduct);
 
 export default MenuProduct;

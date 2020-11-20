@@ -12,7 +12,7 @@
 
   &-content {
     grid-row: content-s/content-e;
-    margin-bottom: 30px;
+    height: 480px;
   }
 }
 
@@ -65,7 +65,7 @@
 
   .menu-cart-products {
     padding-left: 50px;
-    grid-row: products-s/products-e;
+    overflow-y: scroll;
   }
 
   .menu-cart-footer {

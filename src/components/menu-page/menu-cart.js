@@ -5,6 +5,21 @@ import * as actions from "../../actions";
 
 import CartProduct from "./cart-product";
 
+function Footer(props) {
+  const { className, products } = props;
+
+  let subtotal = 0;
+  products.map((cartProduct) => {
+    subtotal += cartProduct.quantity * cartProduct.product.price;
+  });
+  return (
+    <div className={`${className} footer`}>
+      <button className="footer-btn">Check Out</button>
+      <div className="footer-subtotal">Subtotal ${subtotal.toFixed(2)}</div>
+    </div>
+  );
+}
+
 class Cart extends Component {
   renderCartProducts() {
     return this.props.cartProducts.map((cartProduct, index) => {
@@ -18,7 +33,10 @@ class Cart extends Component {
         <div className="menu-cart-content">
           <div className="menu-cart-title">Pedido ({count})</div>
           <div className="menu-cart-products">{this.renderCartProducts()}</div>
-          <div className="menu-cart-footer">Footer</div>
+          <Footer
+            className="menu-cart-footer"
+            products={this.props.cartProducts}
+          />
         </div>
       </div>
     );

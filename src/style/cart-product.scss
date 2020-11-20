@@ -27,10 +27,14 @@
   &-quantity {
     grid-column: s/m;
     grid-row: m/e;
+    justify-self: center;
+    align-self: center;
   }
   &-price {
     grid-column: m/e;
     grid-row: m/e;
+    justify-self: center;
+    align-self: center;
   }
 }
 
@@ -45,5 +49,48 @@
   &-price {
     color: $soft-orage;
     font-size: 2.5rem;
+  }
+}
+
+.quantity {
+  display: grid;
+  grid-template-columns: [s] 2fr [m] 1fr [e];
+  grid-template-rows: [s] 1fr [e];
+
+  width: 80px;
+  height: 35px;
+
+  &-title {
+    grid-column: s/m;
+    grid-row: s/e;
+    align-self: center;
+    justify-self: center;
+  }
+
+  &-btns {
+    grid-column: m/e;
+    grid-row: s/e;
+
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    i {
+      align-self: center;
+      justify-self: center;
+    }
+  }
+}
+
+.quantity {
+  border: solid 1px $beauty-black;
+  border-radius: 10px;
+  &-title {
+    font-size: 2.5rem;
+  }
+  &-btns {
+    height: 100%;
+    border: solid 1px $beauty-black;
+    border-radius: 0px 10px 10px 0px;
+    margin-top: -1px;
+    margin-right: -1px;
   }
 }

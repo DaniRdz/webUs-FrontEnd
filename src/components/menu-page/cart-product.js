@@ -6,9 +6,12 @@ export default class CartProduct extends Component {
     const { title, price, imgURL } = product;
     return (
       <div className="cart-product">
-        <div className="cart-product-title">{title}</div>
         <img className="cart-product-img" src={imgURL} />
-        <div className="cart-product-price">{price}</div>
+        <div className="cart-product-info">
+          <div className="cart-product-info-title">{title}</div>
+          <div className="cart-product-info-quantity">{quantity}</div>
+          <div className="cart-product-info-price">${price}</div>
+        </div>
       </div>
     );
   }

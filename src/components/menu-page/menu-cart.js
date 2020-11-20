@@ -12,10 +12,11 @@ class Cart extends Component {
     });
   }
   render() {
+    let count = this.props.cartProducts.length;
     return (
       <div className="menu-cart">
         <div className="menu-cart-content">
-          <div className="menu-cart-title">Pedido (2)</div>
+          <div className="menu-cart-title">Pedido ({count})</div>
           <div className="menu-cart-products">{this.renderCartProducts()}</div>
           <div className="menu-cart-footer">Footer</div>
         </div>

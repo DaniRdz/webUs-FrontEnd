@@ -3,16 +3,20 @@ import { connect } from "react-redux";
 
 import * as actions from "../../actions";
 
+import CartProduct from "./cart-product";
+
 class Cart extends Component {
-  componentDidMount() {
-    console.log(this.props.cartProducts);
+  renderCartProducts() {
+    return this.props.cartProducts.map((cartProduct, index) => {
+      return <CartProduct key={index} {...cartProduct} />;
+    });
   }
   render() {
     return (
       <div className="menu-cart">
         <div className="menu-cart-content">
           <div className="menu-cart-title">Pedido (2)</div>
-          <div className="menu-cart-products">Product goes here</div>
+          <div className="menu-cart-products">{this.renderCartProducts()}</div>
           <div className="menu-cart-footer">Footer</div>
         </div>
       </div>

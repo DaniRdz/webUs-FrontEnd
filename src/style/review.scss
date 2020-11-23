@@ -1,5 +1,117 @@
 .review {
   grid-column: s/e;
   grid-row: content-s/content-e;
+}
+
+.review {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 70px 1fr 100px;
   height: calc(100vh - 180px);
+  padding: 0px 100px 0px 100px;
+
+  &-title {
+    font-size: 2.5rem;
+  }
+  &-btns {
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 50px;
+  }
+}
+
+.review-btns {
+  &-back {
+    width: 120px;
+    height: 50px;
+    border-radius: 50px;
+
+    background-color: $beauty-black;
+    color: $soft-white;
+    border: 1px solid $beauty-black;
+    box-shadow: 0px 10px 5px 0px rgba(50, 50, 50, 0.32);
+
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      transform: translateY(4px);
+    }
+  }
+
+  &-continue {
+    width: 120px;
+    height: 50px;
+    border-radius: 50px;
+
+    background-color: $soft-orage;
+    color: $soft-white;
+    border: 1px solid $beauty-black;
+    box-shadow: 0px 10px 5px 0px rgba(50, 50, 50, 0.32);
+
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      transform: translateY(4px);
+    }
+  }
+}
+
+.review-info {
+  display: grid;
+  grid-template-columns: [name-s] 1fr [name-e qty-s] 1fr [qty-e price-s] 1fr [price-e];
+  grid-template-rows: [title-s] 70px [title-e products-s] 1fr [products-e total-s] 100px [total-e];
+
+  &-name {
+    grid-row: title-s/title-e;
+    grid-column: name-s/name-e;
+    justify-self: center;
+  }
+  &-qty {
+    grid-row: title-s/title-e;
+    grid-column: qty-s/qty-e;
+    justify-self: center;
+  }
+  &-price {
+    grid-row: title-s/title-e;
+    grid-column: price-s/price-e;
+    justify-self: center;
+  }
+  &-line-top {
+    grid-row: title-s/title-e;
+    grid-column: name-s/price-e;
+  }
+  &-products {
+    grid-row: products-s/products-e;
+    grid-column: name-s/price-e;
+  }
+  &-line-bot {
+    grid-row: products-s/products-e;
+    grid-column: name-s/price-e;
+  }
+  &-total {
+    grid-row: total-s/total-e;
+    grid-column: name-s/price-e;
+    justify-self: end;
+  }
+}
+
+.review-info {
+  &-name,
+  &-qty,
+  &-price {
+    font-size: 2rem;
+  }
+  &-line-top {
+    align-self: center;
+  }
+
+  &-line-top,
+  &-line-bot {
+    border-bottom: 1px solid $beauty-black;
+  }
 }

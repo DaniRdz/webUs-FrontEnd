@@ -5,6 +5,8 @@ import * as actions from "../../actions";
 
 import CartProduct from "./cart-product";
 
+import history from "../../history";
+
 function Footer(props) {
   const { className, products } = props;
 
@@ -14,7 +16,12 @@ function Footer(props) {
   });
   return (
     <div className={`${className} footer`}>
-      <button className="footer-btn">Check Out</button>
+      <button
+        className="footer-btn"
+        onClick={() => history.push("/checkout/order/resumen")}
+      >
+        Check Out
+      </button>
       <div className="footer-subtotal">Subtotal ${subtotal.toFixed(2)}</div>
     </div>
   );

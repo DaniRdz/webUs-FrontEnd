@@ -6,6 +6,7 @@ import SingIn from "./login-page/sign-in";
 import Register from "./register-page/register";
 import AboutUs from "./about-us-page/about-us";
 import Menu from "./menu-page/menu";
+import Review from "./review-page/review";
 import NavigationContainer from "./navigation-container";
 import Footer from "./footer";
 
@@ -23,6 +24,7 @@ export default class App extends Component {
             <Route exact path="/register" component={Register} />
             <Route exact path="/acerca-de-nosotros" component={AboutUs} />
             <Route exact path="/menu" component={Menu} />
+            <Route exact path="/checkout/order/resumen" component={Review} />
           </Switch>
         </Router>
         <Footer />

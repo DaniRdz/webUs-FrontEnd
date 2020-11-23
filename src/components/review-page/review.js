@@ -1,6 +1,14 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
-export default class Review extends Component {
+import ReviewProduct from "./review-product";
+
+class Review extends Component {
+  renderProducts() {
+    return this.props.cartProducts.map((cartProduct, index) => {
+      return <ReviewProduct key={index} {...cartProduct} />;
+    });
+  }
   render() {
     return (
       <div className="review">
@@ -11,7 +19,7 @@ export default class Review extends Component {
           <div className="review-info-qty">Cantidad</div>
           <div className="review-info-price">Precio</div>
           <div className="review-info-line-top"></div>
-          <div className="review-info-products">products goes here</div>
+          <div className="review-info-products">{this.renderProducts()}</div>
           <div className="review-info-line-bot"></div>
           <div className="review-info-total">Total goes here</div>
         </div>
@@ -31,3 +39,13 @@ export default class Review extends Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  const { cartProducts } = state.user;
+
+  return { cartProducts };
+}
+
+Review = connect(mapStateToProps)(Review);
+
+export default Review;

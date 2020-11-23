@@ -64,7 +64,7 @@
 .review-info {
   display: grid;
   grid-template-columns: [name-s] 1fr [name-e qty-s] 1fr [qty-e price-s] 1fr [price-e];
-  grid-template-rows: [title-s] 70px [title-e products-s] 1fr [products-e total-s] 100px [total-e];
+  grid-template-rows: [title-s] 70px [title-e products-s] 200px [products-e total-s] 100px [total-e];
 
   &-name {
     grid-row: title-s/title-e;
@@ -108,6 +108,10 @@
   }
   &-line-top {
     align-self: center;
+  }
+  &-products {
+    overflow-y: scroll;
+    margin-bottom: 35px;
   }
 
   &-line-top,

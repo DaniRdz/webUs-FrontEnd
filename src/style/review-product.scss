@@ -1,0 +1,39 @@
+.review-product {
+  display: grid;
+  grid-template-columns: [title-s] 1fr [title-e qty-s] 1fr [qty-e price-s] 1fr [price-e];
+  grid-template-rows: [s] 1fr [e];
+  margin-bottom: 20px;
+
+  & > * {
+    justify-self: center;
+    align-self: center;
+  }
+  &-img {
+    grid-column: title-s/title-e;
+    grid-row: s/e;
+    justify-self: start;
+  }
+  &-title {
+    grid-column: title-s/title-e;
+    grid-row: s/e;
+    justify-self: end;
+  }
+  &-qty {
+    grid-column: qty-s/qty-e;
+    grid-row: s/e;
+  }
+  &-price {
+    grid-column: price-s/price-e;
+    grid-row: s/e;
+  }
+}
+.review-product {
+  & > * {
+    font-size: 2rem;
+  }
+  &-img {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+  }
+}

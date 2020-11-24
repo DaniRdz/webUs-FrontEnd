@@ -16,6 +16,10 @@
   .shipping-form {
     grid-column: s/m;
   }
+  &-order-summary {
+    grid-column: m/e;
+    justify-self: center;
+  }
 }
 
 .shipping-form {

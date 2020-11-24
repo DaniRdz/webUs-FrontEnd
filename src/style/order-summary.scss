@@ -1,0 +1,50 @@
+.order-summary {
+  display: grid;
+  grid-template-columns: [s] 1fr [e];
+  grid-template-rows: [title-s] 40px [title-e info-s] 1fr [info-e];
+
+  row-gap: 20px;
+
+  width: 50%;
+  height: 50%;
+
+  & > * {
+    grid-column: s/e;
+  }
+
+  &-title {
+    grid-row: title-s/title-e;
+  }
+  &-line {
+    grid-row: title-s/title-e;
+  }
+  &-info {
+    grid-row: info-s/info-e;
+  }
+}
+
+.order-summary {
+  &-title {
+    font-size: 2.5rem;
+  }
+  &-line {
+    border-bottom: solid 2px $beauty-black;
+  }
+  &-info {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    font-size: 2rem;
+  }
+}
+
+.order-summary-info {
+  & > * {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .price {
+    font-size: 2.5rem;
+    color: $soft-orage;
+  }
+}

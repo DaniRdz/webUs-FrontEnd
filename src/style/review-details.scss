@@ -1,0 +1,30 @@
+.review-info-details {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+
+  width: 200px;
+  margin-top: 10px;
+}
+
+.review-info-details {
+  &-subtotal,
+  &-shipping,
+  &-total {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.review-info-details {
+  &-subtotal,
+  &-shipping,
+  &-total {
+    font-size: 2rem;
+  }
+}
+
+.orange {
+  font-size: 2.5rem;
+  color: $soft-orage;
+}

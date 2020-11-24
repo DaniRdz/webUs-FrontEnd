@@ -10,6 +10,11 @@ class Review extends Component {
     });
   }
   render() {
+    let subtotal = 0.0;
+    let shipping = 30;
+    this.props.cartProducts.map((cartProduct) => {
+      subtotal += cartProduct.quantity * cartProduct.product.price;
+    });
     return (
       <div className="review">
         <div className="review-title">Resumen de Orden</div>
@@ -21,7 +26,20 @@ class Review extends Component {
           <div className="review-info-line-top"></div>
           <div className="review-info-products">{this.renderProducts()}</div>
           <div className="review-info-line-bot"></div>
-          <div className="review-info-total">Total goes here</div>
+          <div className="review-info-details">
+            <div className="review-info-details-subtotal">
+              <div className="title">Subtotal</div>
+              <div className="price">${subtotal}</div>
+            </div>
+            <div className="review-info-details-shipping">
+              <div className="title">Envio</div>
+              <div className="price">${shipping}</div>
+            </div>
+            <div className="review-info-details-total">
+              <div className="title">Total</div>
+              <div className="price orange">${shipping + subtotal}</div>
+            </div>
+          </div>
         </div>
 
         <div className="review-btns">

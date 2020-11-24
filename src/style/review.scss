@@ -23,9 +23,10 @@
 
 .review-btns {
   &-back {
-    width: 120px;
+    width: 175px;
     height: 50px;
     border-radius: 50px;
+    font-size: 1.5rem;
 
     background-color: $beauty-black;
     color: $soft-white;
@@ -42,9 +43,10 @@
   }
 
   &-continue {
-    width: 120px;
+    width: 175px;
     height: 50px;
     border-radius: 50px;
+    font-size: 1.5rem;
 
     background-color: $soft-orage;
     color: $soft-white;

@@ -1,0 +1,12 @@
+.shipping-info {
+  grid-column: s/e;
+  grid-row: content-s/content-e;
+  height: calc(100vh - 180px);
+}
+
+.shipping-info {
+  padding: 0px 100px 0px 100px;
+  &-title {
+    font-size: 2.5rem;
+  }
+}

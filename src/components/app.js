@@ -7,6 +7,7 @@ import Register from "./register-page/register";
 import AboutUs from "./about-us-page/about-us";
 import Menu from "./menu-page/menu";
 import Review from "./review-page/review";
+import ShippingInfo from "./shipping-page/shipping-info";
 import NavigationContainer from "./navigation-container";
 import Footer from "./footer";
 
@@ -25,6 +26,11 @@ export default class App extends Component {
             <Route exact path="/acerca-de-nosotros" component={AboutUs} />
             <Route exact path="/menu" component={Menu} />
             <Route exact path="/checkout/order/resumen" component={Review} />
+            <Route
+              exact
+              path="/information/shipping"
+              component={ShippingInfo}
+            />
           </Switch>
         </Router>
         <Footer />

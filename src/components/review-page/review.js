@@ -37,7 +37,9 @@ class Review extends Component {
             </div>
             <div className="review-info-details-total">
               <div className="title">Total</div>
-              <div className="price orange">${shipping + subtotal}</div>
+              <div className="price orange">
+                ${(shipping + subtotal).toFixed(2)}
+              </div>
             </div>
           </div>
         </div>
@@ -51,7 +53,14 @@ class Review extends Component {
           >
             Regresar
           </button>
-          <button className="review-btns-continue">Continuar</button>
+          <button
+            onClick={() => {
+              this.props.history.push("/information/shipping");
+            }}
+            className="review-btns-continue"
+          >
+            Continuar
+          </button>
         </div>
       </div>
     );

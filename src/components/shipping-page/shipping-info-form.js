@@ -48,7 +48,7 @@ class ShippingForm extends Component {
         />
         <Field
           className="shipping-form-btn"
-          onClick={() => console.log("usuario registrado")}
+          onClick={() => console.log("envio registrado")}
           type="submit"
           title="Continuar"
           name="continue"

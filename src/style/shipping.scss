@@ -1,12 +1,53 @@
 .shipping-info {
   grid-column: s/e;
   grid-row: content-s/content-e;
-  height: calc(100vh - 180px);
 }
 
 .shipping-info {
+  display: grid;
+  grid-template-columns: [s] 1fr [m] 1fr [e];
+  grid-template-rows: 70px 1fr;
+  height: calc(100vh - 180px);
   padding: 0px 100px 0px 100px;
+
   &-title {
     font-size: 2.5rem;
+  }
+  .shipping-form {
+    grid-column: s/m;
+  }
+}
+
+.shipping-form {
+  display: grid;
+  grid-template-columns: [s] 1fr [e];
+  grid-template-rows: [name-s] 1fr [name-e phone-s] 1fr [phone-e address-s] 1fr [address-e zipcode-s] 1fr [zipcode-e col-s] 1fr [col-e btns-s] 1fr [btns-e];
+
+  margin-bottom: 25px;
+  & > * {
+    grid-column: s/e;
+  }
+  &-name {
+    grid-row: name-s/name-e;
+  }
+
+  &-phone {
+    grid-row: phone-s/phone-e;
+  }
+
+  &-address {
+    grid-row: address-s/address-e;
+  }
+  &-col {
+    grid-row: col-s/col-e;
+  }
+  &-zipcode {
+    grid-row: zipcode-s/zipcode-e;
+  }
+  &-btns {
+    grid-row: btns-s/btns-e;
+
+    display: flex;
+    justify-content: space-evenly;
   }
 }

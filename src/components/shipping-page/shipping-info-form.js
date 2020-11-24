@@ -46,23 +46,25 @@ class ShippingForm extends Component {
           name="zipcode"
           component={FormInput}
         />
-        <Field
-          className="shipping-form-btn"
-          onClick={() => console.log("envio registrado")}
-          type="submit"
-          title="Continuar"
-          name="continue"
-          component={FormButton}
-        />
-        <Field
-          className="shipping-form-btn"
-          onClick={() => history.push("/checkout/order/resumen")}
-          type="button"
-          title="Regresar"
-          back={true}
-          name="back"
-          component={FormButton}
-        />
+        <div className="shipping-form-btns">
+          <Field
+            className="shipping-form-btn"
+            onClick={() => history.push("/checkout/order/resumen")}
+            type="button"
+            title="Regresar"
+            back={true}
+            name="back"
+            component={FormButton}
+          />
+          <Field
+            className="shipping-form-btn"
+            onClick={() => console.log("envio registrado")}
+            type="submit"
+            title="Continuar"
+            name="continue"
+            component={FormButton}
+          />
+        </div>
       </form>
     );
   }

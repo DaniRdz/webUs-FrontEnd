@@ -24,34 +24,48 @@
 
 .shipping-form {
   display: grid;
-  grid-template-columns: [s] 1fr [e];
-  grid-template-rows: [name-s] 1fr [name-e phone-s] 1fr [phone-e address-s] 1fr [address-e zipcode-s] 1fr [zipcode-e col-s] 1fr [col-e btns-s] 1fr [btns-e];
-
+  grid-template-columns: [s] 1fr [m] 1fr [e];
+  grid-template-rows: [name-s] 1fr [name-e phone-s] 1fr [phone-e address-s] 1fr [address-e zipcode-s] 1fr [zipcode-e space-s] 1fr [space-e btns-s] 1fr [btns-e];
+  column-gap: 20px;
   margin-bottom: 25px;
-  & > * {
-    grid-column: s/e;
-  }
+
   &-name {
     grid-row: name-s/name-e;
+    grid-column: s/e;
   }
 
   &-phone {
     grid-row: phone-s/phone-e;
+    grid-column: s/e;
   }
 
   &-address {
     grid-row: address-s/address-e;
+    grid-column: s/e;
   }
   &-col {
-    grid-row: col-s/col-e;
+    grid-row: zipcode-s/zipcode-e;
+    grid-column: m/e;
   }
   &-zipcode {
     grid-row: zipcode-s/zipcode-e;
+    grid-column: s/m;
   }
   &-btns {
     grid-row: btns-s/btns-e;
+    grid-column: s/e;
 
     display: flex;
     justify-content: space-evenly;
+  }
+}
+
+.shipping-form {
+  &-name,
+  &-phone,
+  &-address {
+    .input {
+      width: 97%;
+    }
   }
 }

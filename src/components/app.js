@@ -8,6 +8,7 @@ import AboutUs from "./about-us-page/about-us";
 import Menu from "./menu-page/menu";
 import Review from "./review-page/review";
 import ShippingInfo from "./shipping-page/shipping-info";
+import Payment from "./payment-page/payment";
 import NavigationContainer from "./navigation-container";
 import Footer from "./footer";
 
@@ -31,6 +32,7 @@ export default class App extends Component {
               path="/information/shipping"
               component={ShippingInfo}
             />
+            <Route exact path="/information/payment" component={Payment} />
           </Switch>
         </Router>
         <Footer />

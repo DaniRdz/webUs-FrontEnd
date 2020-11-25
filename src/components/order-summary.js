@@ -2,8 +2,7 @@ import React, { Component } from "react";
 
 export default class OrderSumary extends Component {
   render() {
-    const { className, products, qty } = this.props;
-    const { price } = products;
+    const { className, products } = this.props;
     let subtotal = 0;
     let count = 0;
     let shipping = 30;

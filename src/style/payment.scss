@@ -1,0 +1,23 @@
+.payment {
+  grid-column: s/e;
+  grid-row: content-s/content-e;
+}
+
+.payment {
+  display: grid;
+  grid-template-columns: [s] 1fr [m] 1fr [e];
+  grid-template-rows: 70px 1fr;
+  height: calc(100vh - 180px);
+  padding: 0px 100px 0px 100px;
+
+  &-title {
+    font-size: 2.5rem;
+  }
+  &-form {
+    grid-column: s/m;
+  }
+  &-order-summary {
+    grid-column: m/e;
+    justify-self: center;
+  }
+}

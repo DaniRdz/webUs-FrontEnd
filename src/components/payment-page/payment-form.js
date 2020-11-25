@@ -5,51 +5,51 @@ import { FormInput, FormButton } from "../form-fields";
 
 import history from "../../history";
 
-class ShippingForm extends Component {
+class PaymentForm extends Component {
   render() {
     const { handleSubmit } = this.props;
 
     return (
-      <form onSubmit={handleSubmit} className="shipping-form">
+      <form onSubmit={handleSubmit} className="payment-form">
         <Field
-          className="shipping-form-name"
+          className="payment-form-name"
           type="name"
           placeholder="Nombre"
           name="name"
           component={FormInput}
         />
         <Field
-          className="shipping-form-phone"
+          className="payment-form-phone"
           type="phone"
           placeholder="Telefono"
           name="phone"
           component={FormInput}
         />
         <Field
-          className="shipping-form-address"
+          className="payment-form-address"
           type="address"
           placeholder="Direccion"
           name="address"
           component={FormInput}
         />
         <Field
-          className="shipping-form-col"
+          className="payment-form-col"
           type="col"
           placeholder="Colonia"
           name="col"
           component={FormInput}
         />
         <Field
-          className="shipping-form-zipcode"
+          className="payment-form-zipcode"
           type="zipcode"
           placeholder="Codigo Postal"
           name="zipcode"
           component={FormInput}
         />
-        <div className="shipping-form-btns">
+        <div className="payment-form-btns">
           <Field
-            className="shipping-form-btn"
-            onClick={() => history.push("/checkout/order/resumen")}
+            className="payment-form-btn"
+            onClick={() => history.push("/information/shipping")}
             type="button"
             title="Regresar"
             back={true}
@@ -57,7 +57,7 @@ class ShippingForm extends Component {
             component={FormButton}
           />
           <Field
-            className="shipping-form-btn"
+            className="payment-form-btn"
             onClick={() => history.push("/information/payment")}
             type="submit"
             title="Continuar"
@@ -69,8 +69,8 @@ class ShippingForm extends Component {
     );
   }
 }
-ShippingForm = reduxForm({
-  form: "ShippingForm",
-})(ShippingForm);
+PaymentForm = reduxForm({
+  form: "PaymentForm",
+})(PaymentForm);
 
-export default ShippingForm;
+export default PaymentForm;

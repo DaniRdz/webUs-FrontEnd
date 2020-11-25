@@ -34,7 +34,10 @@ class Cart extends Component {
     });
   }
   render() {
-    let count = this.props.cartProducts.length;
+    let count = 0;
+    this.props.cartProducts.map((cartProduct) => {
+      count += cartProduct.quantity;
+    });
     return (
       <div className="menu-cart">
         <div className="menu-cart-content">

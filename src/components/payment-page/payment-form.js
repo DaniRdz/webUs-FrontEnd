@@ -12,38 +12,32 @@ class PaymentForm extends Component {
     return (
       <form onSubmit={handleSubmit} className="payment-form">
         <Field
+          className="payment-form-number-card"
+          type="numberCard"
+          placeholder="Numero de tarjeta"
+          name="numberCard"
+          component={FormInput}
+        />
+        <i className="fas fa-lock encrypted"></i>
+        <Field
           className="payment-form-name"
           type="name"
-          placeholder="Nombre"
+          placeholder="Nombre del titular"
           name="name"
           component={FormInput}
         />
         <Field
-          className="payment-form-phone"
-          type="phone"
-          placeholder="Telefono"
-          name="phone"
+          className="payment-form-date"
+          type="expirationDate"
+          placeholder="Fecha de vencimiento (MM/AA)"
+          name="expirationDate"
           component={FormInput}
         />
         <Field
-          className="payment-form-address"
-          type="address"
-          placeholder="Direccion"
-          name="address"
-          component={FormInput}
-        />
-        <Field
-          className="payment-form-col"
-          type="col"
-          placeholder="Colonia"
-          name="col"
-          component={FormInput}
-        />
-        <Field
-          className="payment-form-zipcode"
-          type="zipcode"
-          placeholder="Codigo Postal"
-          name="zipcode"
+          className="payment-form-cvv"
+          type="cvv"
+          placeholder="Codigo de seguridad"
+          name="cvv"
           component={FormInput}
         />
         <div className="payment-form-btns">
@@ -58,9 +52,9 @@ class PaymentForm extends Component {
           />
           <Field
             className="payment-form-btn"
-            onClick={() => history.push("/information/payment")}
+            onClick={() => console.log("Pago Realizado")}
             type="submit"
-            title="Continuar"
+            title="Continuar & Pagar"
             name="continue"
             component={FormButton}
           />

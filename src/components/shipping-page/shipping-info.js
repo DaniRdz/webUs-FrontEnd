@@ -5,14 +5,15 @@ import ShippingForm from "./shipping-info-form";
 import OrderSummary from "../order-summary";
 
 class ShippingInfo extends Component {
-  handleSubmit(fields) {
+  onSubmit = (fields) => {
     console.log(fields);
-  }
+    this.props.history.push("/information/payment");
+  };
   render() {
     return (
       <div className="shipping-info">
         <div className="shipping-info-title">Informacion de envio</div>
-        <ShippingForm onSubmit={this.handleSubmit} />
+        <ShippingForm onSubmit={this.onSubmit} />
         <OrderSummary
           className="shipping-info-order-summary"
           products={this.props.cartProducts}

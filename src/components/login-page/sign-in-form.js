@@ -27,7 +27,6 @@ class SignInForm extends Component {
         />
         <Field
           className="sign-in-form-btn"
-          onClick={() => console.log("Hello amix")}
           type="submit"
           title="Login"
           name="login"

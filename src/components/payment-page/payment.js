@@ -6,14 +6,14 @@ import PaymentForm from "./payment-form";
 import ShippingSummary from "./shipping-sumary";
 
 class Payment extends Component {
-  handleSubmit(fields) {
+  onSubmit(fields) {
     console.log(fields);
   }
   render() {
     return (
       <div className="payment">
         <div className="payment-title">Informacion de pago</div>
-        <PaymentForm onSubmit={this.handleSubmit} />
+        <PaymentForm onSubmit={this.onSubmit} />
         <div className="payment-summaries">
           <OrderSummary
             className="payment-order-summary"

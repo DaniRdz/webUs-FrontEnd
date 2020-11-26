@@ -7,6 +7,7 @@ import wallpaper from "../../../static/assets/images/wallpapers/salchipulpos-log
 class SignIn extends Component {
   onSubmit = (fields) => {
     console.log(fields);
+    this.props.history.push("/");
   };
   render() {
     return (

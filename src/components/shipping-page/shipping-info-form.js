@@ -58,7 +58,6 @@ class ShippingForm extends Component {
           />
           <Field
             className="shipping-form-btn"
-            onClick={() => history.push("/information/payment")}
             type="submit"
             title="Continuar"
             name="continue"

@@ -4,9 +4,11 @@ import { connect } from "react-redux";
 import ShippingForm from "./shipping-info-form";
 import OrderSummary from "../order-summary";
 
+import * as actions from "../../actions";
+
 class ShippingInfo extends Component {
   onSubmit = (fields) => {
-    console.log(fields);
+    this.props.setUserInfo(fields);
     this.props.history.push("/information/payment");
   };
   render() {
@@ -27,6 +29,6 @@ function mapStateToProps(state) {
   return { cartProducts };
 }
 
-ShippingInfo = connect(mapStateToProps)(ShippingInfo);
+ShippingInfo = connect(mapStateToProps, actions)(ShippingInfo);
 
 export default ShippingInfo;

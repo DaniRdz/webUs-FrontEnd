@@ -1,4 +1,11 @@
-import { ADD_CART_PRODUCT, SET_CART_PRODUCTS } from "./types";
+import { ADD_CART_PRODUCT, SET_CART_PRODUCTS, SET_USER_INFO } from "./types";
+
+export function setUserInfo(fields) {
+  return {
+    type: SET_USER_INFO,
+    payload: fields,
+  };
+}
 
 export function addCartProduct(product) {
   return {

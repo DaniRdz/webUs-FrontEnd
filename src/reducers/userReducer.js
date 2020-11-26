@@ -1,11 +1,18 @@
-import { ADD_CART_PRODUCT, SET_CART_PRODUCTS } from "../actions/types";
+import {
+  ADD_CART_PRODUCT,
+  SET_CART_PRODUCTS,
+  SET_USER_INFO,
+} from "../actions/types";
 
 const INITIAL_STATE = {
   cartProducts: [],
+  user: {},
 };
 
 export default function (state = INITIAL_STATE, action) {
   switch (action.type) {
+    case SET_USER_INFO:
+      return { ...state, user: action.payload };
     case SET_CART_PRODUCTS:
       return { ...state, cartProducts: action.payload };
 

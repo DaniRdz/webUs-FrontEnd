@@ -52,7 +52,7 @@ class PaymentForm extends Component {
           />
           <Field
             className="payment-form-btn"
-            onClick={() => console.log("Pago Realizado")}
+            onClick={() => this.props.handleShowModal()}
             type="submit"
             title="Continuar & Pagar"
             name="continue"

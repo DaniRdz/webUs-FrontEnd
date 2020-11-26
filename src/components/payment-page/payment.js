@@ -19,15 +19,18 @@ class Payment extends Component {
             className="payment-order-summary"
             products={this.props.cartProducts}
           />
-          <ShippingSummary className="payment-shipping-summary" />
+          <ShippingSummary
+            className="payment-shipping-summary"
+            user={this.props.user}
+          />
         </div>
       </div>
     );
   }
 }
 function mapStateToProps(state) {
-  const { cartProducts } = state.user;
-  return { cartProducts };
+  const { cartProducts, user } = state.user;
+  return { cartProducts, user };
 }
 
 Payment = connect(mapStateToProps)(Payment);

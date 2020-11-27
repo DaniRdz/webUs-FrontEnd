@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import Modal from "react-modal";
 
+import Logo from "../logo";
+
+import history from "../../history";
+
 Modal.setAppElement(".app-wrapper");
 
 export default class ThanksModal extends Component {
@@ -30,13 +34,28 @@ export default class ThanksModal extends Component {
         isOpen={this.props.showModal}
         style={this.customStyles}
       >
-        <a
-          onClick={() => {
-            this.props.handleCloseModal();
-          }}
-        >
-          Hello here goes thaks modal
-        </a>
+        <div className="modal-content">
+          <Logo />
+          <div className="modal-title">¡Gracias!</div>
+          <div className="modal-msg">
+            <div className="modal-msg-thanks">
+              Recibimos tu orden satisfactoriamente. <br /> <br /> Espera a
+              nuestro repartidor en tu casa, buen provecho y nuevamente
+              ¡Gracias! por la preferencia.
+            </div>
+            <div className="modal-msg-order">
+              Tu numero de orden es: A0000012131
+            </div>
+          </div>
+          <button
+            className="modal-btn-home"
+            onClick={() => {
+              history.push("/");
+            }}
+          >
+            Ir a home
+          </button>
+        </div>
       </Modal>
     );
   }

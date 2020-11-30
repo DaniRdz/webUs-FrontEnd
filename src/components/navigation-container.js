@@ -22,7 +22,7 @@ class NavigationContainer extends Component {
           >
             Acerca de Nosotros
           </a>
-          <a href="#contact" className="link">
+          <a href="#contact" onClick={() => history.push("/")} className="link">
             Contacto
           </a>
           {/* <a>Informacion de cuenta</a> */}

@@ -16,7 +16,7 @@
   }
 
   .products {
-    justify-self: center;
+    /* justify-self: center; */
     grid-row: products-s/products-e;
     grid-column: 1/-1;
   }
@@ -49,10 +49,12 @@
 
 .products {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 80px;
-  padding-right: 70px;
-  padding-left: 70px;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  row-gap: 30px;
+  column-gap: 10px;
+
+  width: 100%;
+
   padding-top: 70px;
   margin-top: 10px;
   margin-bottom: 50px;

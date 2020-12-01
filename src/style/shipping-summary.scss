@@ -1,7 +1,7 @@
 .shipping-summary {
   display: grid;
   grid-template-columns: [s] 1fr [e];
-  grid-template-rows: [title-s] 40px [title-e info-s] 1fr [info-e];
+  grid-template-rows: [title-s] 1fr [title-e info-s] 3fr [info-e];
 
   row-gap: 20px;
 

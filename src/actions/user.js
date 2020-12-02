@@ -1,4 +1,26 @@
-import { ADD_CART_PRODUCT, SET_CART_PRODUCTS, SET_USER_INFO } from "./types";
+import {
+  ADD_CART_PRODUCT,
+  SET_CART_PRODUCTS,
+  SET_USER_INFO,
+  SAVE_CART,
+} from "./types";
+
+import axios from "axios";
+
+export function saveCart(products) {
+  return function (dispatch) {
+    axios
+      .post("http://localhost:8080/cart/add-to-cart", {
+        items: products,
+      })
+      .then((response) => {
+        dispatch({ type: SAVE_CART, payload: response.data });
+      })
+      .catch((err) => {
+        console.log("We are working in the server sorry");
+      });
+  };
+}
 
 export function setUserInfo(fields) {
   return {

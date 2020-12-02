@@ -18,7 +18,6 @@ class Menu extends Component {
   }
   componentDidMount() {
     this.props.fetchMenuProducts();
-    this.props.setCartProducts(); // provisional until connecting with API
   }
 
   renderProducts() {

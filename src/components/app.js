@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Router, Switch, Route } from "react-router-dom";
+import { connect } from "react-redux";
 
 import Home from "./home";
 import SingIn from "./login-page/sign-in";
@@ -13,8 +14,13 @@ import NavigationContainer from "./navigation-container";
 import Footer from "./footer";
 
 import history from "../history";
+import * as actions from "../actions";
 
-export default class App extends Component {
+class App extends Component {
+  componentDidMount() {
+    this.props.setCartProducts();
+  }
+
   render() {
     return (
       <div className="container">
@@ -40,3 +46,5 @@ export default class App extends Component {
     );
   }
 }
+
+export default connect(null, actions)(App);

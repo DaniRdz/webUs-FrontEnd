@@ -1,5 +1,6 @@
 import {
   ADD_CART_PRODUCT,
+  SAVE_CART,
   SET_CART_PRODUCTS,
   SET_USER_INFO,
 } from "../actions/types";
@@ -13,6 +14,11 @@ export default function (state = INITIAL_STATE, action) {
   switch (action.type) {
     case SET_USER_INFO:
       return { ...state, user: action.payload };
+
+    case SAVE_CART:
+      /* console.log(action.payload); */
+      return { ...state };
+
     case SET_CART_PRODUCTS:
       return { ...state, cartProducts: action.payload };
 

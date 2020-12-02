@@ -10,16 +10,18 @@ import history from "../../history";
 function Footer(props) {
   const { className, products } = props;
 
+  function handleCheckOut() {
+    history.push("/checkout/order/resumen");
+    props.saveCart(products);
+  }
+
   let subtotal = 0;
   products.map((cartProduct) => {
     subtotal += cartProduct.quantity * cartProduct.product.price;
   });
   return (
     <div className={`${className} footer`}>
-      <button
-        className="footer-btn"
-        onClick={() => history.push("/checkout/order/resumen")}
-      >
+      <button className="footer-btn" onClick={() => handleCheckOut()}>
         Check Out
       </button>
       <div className="footer-subtotal">Subtotal ${subtotal.toFixed(2)}</div>
@@ -46,6 +48,7 @@ class Cart extends Component {
           <Footer
             className="menu-cart-footer"
             products={this.props.cartProducts}
+            saveCart={this.props.saveCart}
           />
         </div>
       </div>

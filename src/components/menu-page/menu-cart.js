@@ -32,7 +32,7 @@ function Footer(props) {
 class Cart extends Component {
   renderCartProducts() {
     return this.props.cartProducts.map((cartProduct, index) => {
-      return <CartProduct key={index} {...cartProduct} />;
+      return <CartProduct key={index} {...cartProduct} pos={index} />;
     });
   }
   render() {

@@ -5,7 +5,13 @@ import {
   filterProductsWithCategoryId,
 } from "./menu";
 
-import { addCartProduct, setCartProducts, setUserInfo, saveCart } from "./user";
+import {
+  addCartProduct,
+  setCartProducts,
+  setUserInfo,
+  saveCart,
+  removeCartProduct,
+} from "./user";
 
 export {
   fetchMenuProducts,
@@ -16,4 +22,5 @@ export {
   setCartProducts,
   setUserInfo,
   saveCart,
+  removeCartProduct,
 };

@@ -1,5 +1,7 @@
+import actions from "redux-form/lib/actions";
 import {
   ADD_CART_PRODUCT,
+  REMOVE_CART_PRODUCT,
   SAVE_CART,
   SET_CART_PRODUCTS,
   SET_USER_INFO,
@@ -21,6 +23,11 @@ export default function (state = INITIAL_STATE, action) {
 
     case SET_CART_PRODUCTS:
       return { ...state, cartProducts: action.payload };
+
+    case REMOVE_CART_PRODUCT:
+      const pos = action.payload;
+      state.cartProducts.splice(pos, 1);
+      return { ...state };
 
     case ADD_CART_PRODUCT:
       var exists = false;

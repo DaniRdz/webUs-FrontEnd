@@ -1,10 +1,13 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
 import Quantity from "./quantity";
 
-export default class CartProduct extends Component {
+import * as actions from "../../actions";
+
+class CartProduct extends Component {
   render() {
-    const { product, quantity } = this.props;
+    const { product, quantity, pos } = this.props;
     const { title, price, imgURL } = product;
     return (
       <div className="cart-product">
@@ -15,9 +18,17 @@ export default class CartProduct extends Component {
             className="cart-product-info-quantity"
             quantity={quantity}
           />
+          <a
+            className="cart-product-remove"
+            onClick={() => this.props.removeCartProduct(pos)}
+          >
+            Quitar
+          </a>
           <div className="cart-product-info-price">${price}</div>
         </div>
       </div>
     );
   }
 }
+
+export default connect(null, actions)(CartProduct);

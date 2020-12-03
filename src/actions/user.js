@@ -3,6 +3,7 @@ import {
   SET_CART_PRODUCTS,
   SET_USER_INFO,
   SAVE_CART,
+  REMOVE_CART_PRODUCT,
 } from "./types";
 
 import axios from "axios";
@@ -33,6 +34,13 @@ export function addCartProduct(product) {
   return {
     type: ADD_CART_PRODUCT,
     payload: product,
+  };
+}
+
+export function removeCartProduct(pos) {
+  return {
+    type: REMOVE_CART_PRODUCT,
+    payload: pos,
   };
 }
 

@@ -19,7 +19,7 @@ class CartProduct extends Component {
             quantity={quantity}
           />
           <a
-            className="cart-product-remove"
+            className="cart-product-info-remove"
             onClick={() => this.props.removeCartProduct(pos)}
           >
             Quitar

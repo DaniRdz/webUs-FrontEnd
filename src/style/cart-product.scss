@@ -50,6 +50,11 @@
     color: $soft-orage;
     font-size: 2.5rem;
   }
+  &-remove {
+    padding-left: 15px;
+
+    cursor: pointer;
+  }
 }
 
 .quantity {

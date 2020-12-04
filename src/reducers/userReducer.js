@@ -26,8 +26,14 @@ export default function (state = INITIAL_STATE, action) {
 
     case REMOVE_CART_PRODUCT:
       const pos = action.payload;
+      var updateCart = [];
       state.cartProducts.splice(pos, 1);
-      return { ...state };
+
+      state.cartProducts.map((cartProduct) => {
+        updateCart.push(cartProduct);
+      });
+
+      return { ...state, cartProducts: updateCart };
 
     case ADD_CART_PRODUCT:
       var exists = false;

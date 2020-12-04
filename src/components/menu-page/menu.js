@@ -51,6 +51,12 @@ class Menu extends Component {
   handleAddtoCart() {
     if (!this.state.showCart) {
       this.setState({ showCart: true });
+    }
+  }
+
+  handleCartOpenClose() {
+    if (!this.state.showCart) {
+      this.setState({ showCart: true });
     } else {
       this.setState({ showCart: false });
     }
@@ -65,7 +71,7 @@ class Menu extends Component {
             !this.state.showCart ? "fas fa-utensils" : "far fa-times-circle"
           }
           onClick={() => {
-            this.handleAddtoCart();
+            this.handleCartOpenClose();
           }}
         />
         {this.state.showCart ? <Cart /> : null}

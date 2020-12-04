@@ -1,11 +1,17 @@
 import React, { Component } from "react";
 import { reduxForm, Field } from "redux-form";
+import { connect } from "react-redux";
 
 import { FormInput, FormButton } from "../form-fields";
 
 import history from "../../history";
+import * as actions from "../../actions";
 
 class PaymentForm extends Component {
+  handleClick() {
+    this.props.handleShowModal();
+    this.props.setCartProducts();
+  }
   render() {
     const { handleSubmit } = this.props;
 
@@ -52,7 +58,7 @@ class PaymentForm extends Component {
           />
           <Field
             className="payment-form-btn"
-            onClick={() => this.props.handleShowModal()}
+            onClick={() => this.handleClick()}
             type="submit"
             title="Continuar & Pagar"
             name="continue"
@@ -67,4 +73,4 @@ PaymentForm = reduxForm({
   form: "PaymentForm",
 })(PaymentForm);
 
-export default PaymentForm;
+export default connect(null, actions)(PaymentForm);

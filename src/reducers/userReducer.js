@@ -9,14 +9,26 @@ import {
 
 const INITIAL_STATE = {
   cartProducts: [],
-  user: {},
+  user: {
+    name: "",
+    phone: "",
+    addrees: "",
+    cartProducts: "",
+  },
   cartProductId: "",
 };
 
 export default function (state = INITIAL_STATE, action) {
   switch (action.type) {
     case SET_USER_INFO:
-      return { ...state, user: action.payload };
+      const { name, phone, address } = action.payload;
+      const user = {
+        name,
+        phone,
+        address,
+        cartProducts: state.cartProductId,
+      };
+      return { ...state, user };
 
     case UPDATE_CART:
       console.log(action.payload);

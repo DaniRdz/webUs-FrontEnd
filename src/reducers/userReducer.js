@@ -1,15 +1,16 @@
-import actions from "redux-form/lib/actions";
 import {
   ADD_CART_PRODUCT,
   REMOVE_CART_PRODUCT,
   SAVE_CART,
   SET_CART_PRODUCTS,
   SET_USER_INFO,
+  UPDATE_CART,
 } from "../actions/types";
 
 const INITIAL_STATE = {
   cartProducts: [],
   user: {},
+  cartProductId: "",
 };
 
 export default function (state = INITIAL_STATE, action) {
@@ -17,9 +18,14 @@ export default function (state = INITIAL_STATE, action) {
     case SET_USER_INFO:
       return { ...state, user: action.payload };
 
-    case SAVE_CART:
-      /* console.log(action.payload); */
+    case UPDATE_CART:
+      console.log(action.payload);
+
       return { ...state };
+
+    case SAVE_CART:
+      console.log(action.payload);
+      return { ...state, cartProductId: action.payload };
 
     case SET_CART_PRODUCTS:
       return { ...state, cartProducts: action.payload };

@@ -8,11 +8,15 @@ import CartProduct from "./cart-product";
 import history from "../../history";
 
 function Footer(props) {
-  const { className, products } = props;
+  const { className, products, cartProductId } = props;
 
   function handleCheckOut() {
     history.push("/checkout/order/resumen");
-    props.saveCart(products);
+    if (cartProductId === "") {
+      props.saveCart(products);
+    } else {
+      props.updateCart(cartProductId, products);
+    }
   }
 
   let subtotal = 0;
@@ -49,6 +53,8 @@ class Cart extends Component {
             className="menu-cart-footer"
             products={this.props.cartProducts}
             saveCart={this.props.saveCart}
+            cartProductId={this.props.cartProductId}
+            updateCart={this.props.updateCart}
           />
         </div>
       </div>
@@ -56,8 +62,8 @@ class Cart extends Component {
   }
 }
 function mapStateToProps(state) {
-  const { cartProducts } = state.user;
-  return { cartProducts };
+  const { cartProducts, cartProductId } = state.user;
+  return { cartProducts, cartProductId };
 }
 Cart = connect(mapStateToProps, actions)(Cart);
 

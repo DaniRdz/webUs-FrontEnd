@@ -10,6 +10,7 @@ import {
   setCartProducts,
   setUserInfo,
   saveCart,
+  updateCart,
   removeCartProduct,
 } from "./user";
 
@@ -21,6 +22,7 @@ export {
   addCartProduct,
   setCartProducts,
   setUserInfo,
+  updateCart,
   saveCart,
   removeCartProduct,
 };

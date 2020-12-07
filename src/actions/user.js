@@ -4,9 +4,25 @@ import {
   SET_USER_INFO,
   SAVE_CART,
   REMOVE_CART_PRODUCT,
+  UPDATE_CART,
 } from "./types";
 
 import axios from "axios";
+
+export function updateCart(_id, products) {
+  return function (dispatch) {
+    axios
+      .put(`http://localhost:8080/cart/cart-update/${_id}`, {
+        items: products,
+      })
+      .then((response) => {
+        dispatch({ type: UPDATE_CART, payload: response.data });
+      })
+      .catch((err) => {
+        console.log("updateCart error", err);
+      });
+  };
+}
 
 export function saveCart(products) {
   return function (dispatch) {
@@ -15,7 +31,7 @@ export function saveCart(products) {
         items: products,
       })
       .then((response) => {
-        dispatch({ type: SAVE_CART, payload: response.data });
+        dispatch({ type: SAVE_CART, payload: response.data.cartId });
       })
       .catch((err) => {
         console.log("We are working in the server sorry");

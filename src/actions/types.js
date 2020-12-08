@@ -10,3 +10,4 @@ export const SET_CART_PRODUCTS = "SET_CART_PRODUCTS";
 export const SAVE_CART = "SAVE_CART";
 export const UPDATE_CART = "UPDATE_CART";
 export const SET_USER_INFO = "SET_USER_INFO;";
+export const CREATE_ORDER = "CREATE_ORDER";

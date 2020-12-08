@@ -5,6 +5,7 @@ import {
   SET_CART_PRODUCTS,
   SET_USER_INFO,
   UPDATE_CART,
+  CREATE_ORDER,
 } from "../actions/types";
 
 const INITIAL_STATE = {
@@ -20,6 +21,10 @@ const INITIAL_STATE = {
 
 export default function (state = INITIAL_STATE, action) {
   switch (action.type) {
+    case CREATE_ORDER:
+      console.log(action.payload);
+      return { ...state };
+
     case SET_USER_INFO:
       const { _id, name, phone, address, cartProducts } = action.payload;
       const user = {

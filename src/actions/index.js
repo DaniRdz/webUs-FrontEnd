@@ -12,6 +12,7 @@ import {
   saveCart,
   updateCart,
   removeCartProduct,
+  createOrder,
 } from "./user";
 
 export {
@@ -25,4 +26,5 @@ export {
   updateCart,
   saveCart,
   removeCartProduct,
+  createOrder,
 };

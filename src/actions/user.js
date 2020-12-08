@@ -5,9 +5,25 @@ import {
   SAVE_CART,
   REMOVE_CART_PRODUCT,
   UPDATE_CART,
+  CREATE_ORDER,
 } from "./types";
 
 import axios from "axios";
+
+export function createOrder(userId) {
+  return function (dispatch) {
+    axios
+      .post("http://localhost:8080/orders", {
+        user: userId,
+      })
+      .then((response) => {
+        dispatch({ type: CREATE_ORDER, payload: response.data });
+      })
+      .catch((err) => {
+        console.log("createOrder error", err);
+      });
+  };
+}
 
 export function updateCart(_id, products) {
   return function (dispatch) {

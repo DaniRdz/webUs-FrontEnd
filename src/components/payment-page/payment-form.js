@@ -11,6 +11,7 @@ class PaymentForm extends Component {
   handleClick() {
     this.props.handleShowModal();
     this.props.setCartProducts();
+    this.props.createOrder(this.props.user._id);
   }
   render() {
     const { handleSubmit } = this.props;
@@ -60,7 +61,7 @@ class PaymentForm extends Component {
             className="payment-form-btn"
             onClick={() => this.handleClick()}
             type="submit"
-            title="Continuar & Pagar"
+            title="Finalizar & Pagar"
             name="continue"
             component={FormButton}
           />
@@ -69,8 +70,12 @@ class PaymentForm extends Component {
     );
   }
 }
+function mapStateToProps(state) {
+  const { user, cartId } = state.user;
+  return { user, cartId };
+}
 PaymentForm = reduxForm({
   form: "PaymentForm",
 })(PaymentForm);
 
-export default connect(null, actions)(PaymentForm);
+export default connect(mapStateToProps, actions)(PaymentForm);

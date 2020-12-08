@@ -6,6 +6,7 @@ import {
   SET_USER_INFO,
   UPDATE_CART,
   CREATE_ORDER,
+  USER_REGISTER,
 } from "../actions/types";
 
 const INITIAL_STATE = {
@@ -23,6 +24,9 @@ export default function (state = INITIAL_STATE, action) {
   switch (action.type) {
     case CREATE_ORDER:
       console.log(action.payload);
+      return { ...state };
+
+    case USER_REGISTER:
       return { ...state };
 
     case SET_USER_INFO:

@@ -1,12 +1,16 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
 import RegisterForm from "./register-form";
 
 import wallpaper from "../../../static/assets/images/wallpapers/papas-register.jpg";
 
+import * as actions from "../../actions";
+
 class Register extends Component {
   onSubmit = (fields) => {
-    console.log(fields);
+    this.props.userRegister(fields);
+    this.props.history.push("/sign-in");
   };
   render() {
     return (
@@ -25,4 +29,4 @@ class Register extends Component {
   }
 }
 
-export default Register;
+export default connect(null, actions)(Register);

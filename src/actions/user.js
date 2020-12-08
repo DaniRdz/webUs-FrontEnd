@@ -6,6 +6,7 @@ import {
   REMOVE_CART_PRODUCT,
   UPDATE_CART,
   CREATE_ORDER,
+  USER_REGISTER,
 } from "./types";
 
 import axios from "axios";
@@ -70,6 +71,24 @@ export function setUserInfo(fields, cartId) {
       })
       .catch((err) => {
         console.log("setUserinfo Error", err);
+      });
+  };
+}
+
+export function userRegister(fields) {
+  const { name, email, password } = fields;
+  return function (dispatch) {
+    axios
+      .post("http://localhost:8080/users/register", {
+        name,
+        email,
+        password,
+      })
+      .then((response) => {
+        dispatch({ type: USER_REGISTER, payload: response.data.userInfo });
+      })
+      .catch((err) => {
+        console.log("userRegister error", err);
       });
   };
 }

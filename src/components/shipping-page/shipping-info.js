@@ -8,7 +8,7 @@ import * as actions from "../../actions";
 
 class ShippingInfo extends Component {
   onSubmit = (fields) => {
-    this.props.setUserInfo(fields);
+    this.props.setUserInfo(fields, this.props.cartProductId);
     this.props.history.push("/information/payment");
   };
   render() {
@@ -25,8 +25,8 @@ class ShippingInfo extends Component {
   }
 }
 function mapStateToProps(state) {
-  const { cartProducts } = state.user;
-  return { cartProducts };
+  const { cartProducts, cartProductId } = state.user;
+  return { cartProducts, cartProductId };
 }
 
 ShippingInfo = connect(mapStateToProps, actions)(ShippingInfo);

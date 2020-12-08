@@ -12,7 +12,7 @@ const INITIAL_STATE = {
   user: {
     name: "",
     phone: "",
-    addrees: "",
+    address: "",
     cartProducts: "",
   },
   cartProductId: "",
@@ -21,12 +21,13 @@ const INITIAL_STATE = {
 export default function (state = INITIAL_STATE, action) {
   switch (action.type) {
     case SET_USER_INFO:
-      const { name, phone, address } = action.payload;
+      const { _id, name, phone, address, cartProducts } = action.payload;
       const user = {
+        _id,
         name,
         phone,
         address,
-        cartProducts: state.cartProductId,
+        cartProducts,
       };
       return { ...state, user };
 

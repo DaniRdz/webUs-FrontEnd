@@ -39,10 +39,22 @@ export function saveCart(products) {
   };
 }
 
-export function setUserInfo(fields) {
-  return {
-    type: SET_USER_INFO,
-    payload: fields,
+export function setUserInfo(fields, cartId) {
+  const { name, phone, address } = fields;
+  return function (dispatch) {
+    axios
+      .post("http://localhost:8080/users/register", {
+        name,
+        phone,
+        address,
+        cartProducts: cartId,
+      })
+      .then((response) => {
+        dispatch({ type: SET_USER_INFO, payload: response.data.userInfo });
+      })
+      .catch((err) => {
+        console.log("setUserinfo Error", err);
+      });
   };
 }
 

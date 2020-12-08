@@ -73,7 +73,7 @@ export default function (state = INITIAL_STATE, action) {
       });
 
       if (exists == false) {
-        cartProducts.push({
+        cartProducts.unshift({
           product: newCP,
           quantity: 1,
         });

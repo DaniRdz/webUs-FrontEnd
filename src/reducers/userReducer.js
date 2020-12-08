@@ -46,7 +46,14 @@ export default function (state = INITIAL_STATE, action) {
       return { ...state, cartProductId: action.payload };
 
     case SET_CART_PRODUCTS:
-      return { ...state, cartProducts: action.payload };
+      var user = {
+        name: "",
+        phone: "",
+        address: "",
+        cartProducts: "",
+      };
+      const cartProductId = "";
+      return { ...state, cartProducts: action.payload, user, cartProductId };
 
     case REMOVE_CART_PRODUCT:
       const pos = action.payload;

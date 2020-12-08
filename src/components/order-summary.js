@@ -17,7 +17,7 @@ export default class OrderSumary extends Component {
         <div className="order-summary-info">
           <div className="order-summary-info-qty">
             <div className="qty">{count} Productos</div>
-            <div className="price">${subtotal}</div>
+            <div className="price">${subtotal.toFixed(2)}</div>
           </div>
           <div className="order-summary-info-shipping">
             <div className="shipping">Envios & Propinas</div>

@@ -10,7 +10,7 @@ class Review extends Component {
     });
   }
   render() {
-    let subtotal = 0.0;
+    let subtotal = 0;
     let shipping = 30;
     this.props.cartProducts.map((cartProduct) => {
       subtotal += cartProduct.quantity * cartProduct.product.price;
@@ -29,7 +29,7 @@ class Review extends Component {
           <div className="review-info-details">
             <div className="review-info-details-subtotal">
               <div className="title">Subtotal</div>
-              <div className="price">${subtotal}</div>
+              <div className="price">${subtotal.toFixed(2)}</div>
             </div>
             <div className="review-info-details-shipping">
               <div className="title">Envio</div>

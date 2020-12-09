@@ -7,6 +7,7 @@ import {
   UPDATE_CART,
   CREATE_ORDER,
   USER_REGISTER,
+  USER_AUNTHENTICATE,
 } from "../actions/types";
 
 const INITIAL_STATE = {
@@ -18,6 +19,7 @@ const INITIAL_STATE = {
     cartProducts: "",
   },
   cartProductId: "",
+  isLoggin: false,
 };
 
 export default function (state = INITIAL_STATE, action) {
@@ -28,6 +30,16 @@ export default function (state = INITIAL_STATE, action) {
 
     case USER_REGISTER:
       return { ...state };
+
+    case USER_AUNTHENTICATE:
+      console.log(action.payload);
+      let isLoggin = false;
+      const { status } = action.payload;
+      if (status === "ok") {
+        isLoggin = true;
+      }
+
+      return { ...state, isLoggin };
 
     case SET_USER_INFO:
       const { _id, name, phone, address, cartProducts } = action.payload;

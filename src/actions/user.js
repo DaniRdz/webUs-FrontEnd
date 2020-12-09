@@ -7,6 +7,7 @@ import {
   UPDATE_CART,
   CREATE_ORDER,
   USER_REGISTER,
+  USER_AUNTHENTICATE,
 } from "./types";
 
 import axios from "axios";
@@ -89,6 +90,23 @@ export function userRegister(fields) {
       })
       .catch((err) => {
         console.log("userRegister error", err);
+      });
+  };
+}
+
+export function userAuthenticate(fields) {
+  const { email, password } = fields;
+  return function (dispatch) {
+    axios
+      .post("http://localhost:8080/users/authenticate", {
+        email,
+        password,
+      })
+      .then((response) => {
+        dispatch({ type: USER_AUNTHENTICATE, payload: response.data });
+      })
+      .catch((err) => {
+        console.log("userAutenticate erros", err);
       });
   };
 }

@@ -11,4 +11,5 @@ export const SAVE_CART = "SAVE_CART";
 export const UPDATE_CART = "UPDATE_CART";
 export const SET_USER_INFO = "SET_USER_INFO";
 export const USER_REGISTER = "USER_REGISTER";
+export const USER_AUNTHENTICATE = "USER_AUNTHENTICATE";
 export const CREATE_ORDER = "CREATE_ORDER";

@@ -14,6 +14,7 @@ import {
   removeCartProduct,
   createOrder,
   userRegister,
+  userAuthenticate,
 } from "./user";
 
 export {
@@ -29,4 +30,5 @@ export {
   removeCartProduct,
   createOrder,
   userRegister,
+  userAuthenticate,
 };

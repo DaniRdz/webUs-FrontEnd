@@ -1,13 +1,20 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
 import SignInForm from "./sign-in-form";
 
 import wallpaper from "../../../static/assets/images/wallpapers/salchipulpos-login.jpg";
 
+import * as actions from "../../actions";
+
 class SignIn extends Component {
+  componentDidUpdate() {
+    if (this.props.isLoggin) {
+      this.props.history.push("/");
+    }
+  }
   onSubmit = (fields) => {
-    console.log(fields);
-    this.props.history.push("/");
+    this.props.userAuthenticate(fields);
   };
   render() {
     return (
@@ -26,5 +33,9 @@ class SignIn extends Component {
     );
   }
 }
+function mapStateToProps(state) {
+  const { isLoggin } = state.user;
+  return { isLoggin };
+}
 
-export default SignIn;
+export default connect(mapStateToProps, actions)(SignIn);

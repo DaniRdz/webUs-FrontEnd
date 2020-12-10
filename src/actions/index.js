@@ -16,6 +16,7 @@ import {
   userRegister,
   userAuthenticate,
   userLogout,
+  updateUser,
 } from "./user";
 
 export {
@@ -33,4 +34,5 @@ export {
   userRegister,
   userAuthenticate,
   userLogout,
+  updateUser,
 };

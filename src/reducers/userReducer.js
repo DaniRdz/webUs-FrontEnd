@@ -9,6 +9,7 @@ import {
   USER_REGISTER,
   USER_AUNTHENTICATE,
   USER_LOG_OUT,
+  UPDATE_USER,
 } from "../actions/types";
 
 const INITIAL_STATE = {
@@ -72,6 +73,18 @@ export default function (state = INITIAL_STATE, action) {
       };
       return { ...state, user };
 
+    case UPDATE_USER:
+      var { phone, address } = action.payload;
+      var { _id, name, token } = state.user;
+      const updateUser = {
+        _id,
+        token,
+        name,
+        address,
+        phone,
+      };
+      return { ...state, user: updateUser };
+
     case UPDATE_CART:
       console.log(action.payload);
 
@@ -82,14 +95,8 @@ export default function (state = INITIAL_STATE, action) {
       return { ...state, cartProductId: action.payload };
 
     case SET_CART_PRODUCTS:
-      var user = {
-        name: "",
-        phone: "",
-        address: "",
-        cartProducts: "",
-      };
       const cartProductId = "";
-      return { ...state, cartProducts: action.payload, user, cartProductId };
+      return { ...state, cartProducts: action.payload, cartProductId };
 
     case REMOVE_CART_PRODUCT:
       const pos = action.payload;

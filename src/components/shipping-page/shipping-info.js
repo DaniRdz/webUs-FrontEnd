@@ -8,11 +8,11 @@ import * as actions from "../../actions";
 
 class ShippingInfo extends Component {
   onSubmit = (fields) => {
-    const { name } = this.props.user;
+    const { _id, name } = this.props.user;
     if (name === "") {
       this.props.setUserInfo(fields, this.props.cartProductId);
     } else {
-      console.log("is a loggin user");
+      this.props.updateUser(_id, fields, this.props.cartProductId);
     }
     this.props.history.push("/information/payment");
   };

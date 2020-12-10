@@ -11,9 +11,9 @@ class ShippingForm extends Component {
     const { name, phone, address } = this.props.user;
 
     this.props.initialize({
-      name: name == "" ? "" : name,
-      phone: phone == "" ? "" : phone,
-      address: address == "" ? "" : address,
+      name: this.props.isLoggin ? name : "",
+      phone: this.props.isLoggin ? phone : "",
+      address: this.props.isLoggin ? address : "",
     });
   }
   render() {
@@ -69,11 +69,7 @@ class ShippingForm extends Component {
           <Field
             className="shipping-form-btn"
             type="submit"
-            title={
-              this.props.user.name === ""
-                ? "Continuar"
-                : "Usar esta información"
-            }
+            title={this.props.isLoggin ? "Usar esta información" : "Continuar"}
             name="continue"
             component={FormButton}
           />
@@ -83,8 +79,8 @@ class ShippingForm extends Component {
   }
 }
 function mapStateToPtops(state) {
-  const { user } = state.user;
-  return { user };
+  const { user, isLoggin } = state.user;
+  return { user, isLoggin };
 }
 ShippingForm = reduxForm({
   form: "ShippingForm",

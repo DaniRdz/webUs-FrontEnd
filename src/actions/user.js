@@ -9,6 +9,7 @@ import {
   USER_REGISTER,
   USER_AUNTHENTICATE,
   USER_LOG_OUT,
+  UPDATE_USER,
 } from "./types";
 
 import axios from "axios";
@@ -108,6 +109,24 @@ export function userAuthenticate(fields) {
       })
       .catch((err) => {
         console.log("userAutenticate erros", err);
+      });
+  };
+}
+
+export function updateUser(_id, fields, cartId) {
+  const { phone, address } = fields;
+  return function (dispatch) {
+    axios
+      .put(`http://localhost:8080/users/${_id}`, {
+        phone,
+        address,
+        cartProducts: cartId,
+      })
+      .then((response) => {
+        dispatch({ type: UPDATE_USER, payload: response.data.user });
+      })
+      .catch((err) => {
+        console.log("updateUSer error", err);
       });
   };
 }

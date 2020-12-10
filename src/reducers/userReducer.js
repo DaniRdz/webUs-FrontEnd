@@ -58,6 +58,7 @@ export default function (state = INITIAL_STATE, action) {
         address: "",
         cartProducts: "",
       };
+      var isLoggin = false;
       return { ...state, isLoggin, user };
 
     case SET_USER_INFO:

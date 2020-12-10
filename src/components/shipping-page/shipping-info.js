@@ -8,7 +8,12 @@ import * as actions from "../../actions";
 
 class ShippingInfo extends Component {
   onSubmit = (fields) => {
-    this.props.setUserInfo(fields, this.props.cartProductId);
+    const { name } = this.props.user;
+    if (name === "") {
+      this.props.setUserInfo(fields, this.props.cartProductId);
+    } else {
+      console.log("is a loggin user");
+    }
     this.props.history.push("/information/payment");
   };
   render() {
@@ -25,8 +30,8 @@ class ShippingInfo extends Component {
   }
 }
 function mapStateToProps(state) {
-  const { cartProducts, cartProductId } = state.user;
-  return { cartProducts, cartProductId };
+  const { cartProducts, cartProductId, user } = state.user;
+  return { cartProducts, cartProductId, user };
 }
 
 ShippingInfo = connect(mapStateToProps, actions)(ShippingInfo);

@@ -1,11 +1,21 @@
 import React, { Component } from "react";
 import { reduxForm, Field } from "redux-form";
+import { connect } from "react-redux";
 
 import { FormInput, FormButton } from "../form-fields";
 
 import history from "../../history";
 
 class ShippingForm extends Component {
+  componentDidMount() {
+    const { name, phone, address } = this.props.user;
+
+    this.props.initialize({
+      name: name == "" ? "" : name,
+      phone: phone == "" ? "" : phone,
+      address: address == "" ? "" : address,
+    });
+  }
   render() {
     const { handleSubmit } = this.props;
 
@@ -59,7 +69,11 @@ class ShippingForm extends Component {
           <Field
             className="shipping-form-btn"
             type="submit"
-            title="Continuar"
+            title={
+              this.props.user.name === ""
+                ? "Continuar"
+                : "Usar esta información"
+            }
             name="continue"
             component={FormButton}
           />
@@ -68,8 +82,12 @@ class ShippingForm extends Component {
     );
   }
 }
+function mapStateToPtops(state) {
+  const { user } = state.user;
+  return { user };
+}
 ShippingForm = reduxForm({
   form: "ShippingForm",
 })(ShippingForm);
 
-export default ShippingForm;
+export default connect(mapStateToPtops)(ShippingForm);

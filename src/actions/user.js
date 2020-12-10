@@ -8,6 +8,7 @@ import {
   CREATE_ORDER,
   USER_REGISTER,
   USER_AUNTHENTICATE,
+  USER_LOG_OUT,
 } from "./types";
 
 import axios from "axios";
@@ -108,6 +109,12 @@ export function userAuthenticate(fields) {
       .catch((err) => {
         console.log("userAutenticate erros", err);
       });
+  };
+}
+
+export function userLogout() {
+  return {
+    type: USER_LOG_OUT,
   };
 }
 

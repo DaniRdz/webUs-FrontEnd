@@ -15,6 +15,7 @@ import {
   createOrder,
   userRegister,
   userAuthenticate,
+  userLogout,
 } from "./user";
 
 export {
@@ -31,4 +32,5 @@ export {
   createOrder,
   userRegister,
   userAuthenticate,
+  userLogout,
 };

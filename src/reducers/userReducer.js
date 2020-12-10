@@ -8,6 +8,7 @@ import {
   CREATE_ORDER,
   USER_REGISTER,
   USER_AUNTHENTICATE,
+  USER_LOG_OUT,
 } from "../actions/types";
 
 const INITIAL_STATE = {
@@ -32,18 +33,36 @@ export default function (state = INITIAL_STATE, action) {
       return { ...state };
 
     case USER_AUNTHENTICATE:
-      console.log(action.payload);
+      const { user, token } = action.payload;
+      const { _id, name, address, phone } = user;
+      const newUser = {
+        _id,
+        token,
+        name,
+        address,
+        phone,
+      };
+
       let isLoggin = false;
       const { status } = action.payload;
       if (status === "ok") {
         isLoggin = true;
       }
 
-      return { ...state, isLoggin };
+      return { ...state, isLoggin, user: newUser };
+
+    case USER_LOG_OUT:
+      var user = {
+        name: "",
+        phone: "",
+        address: "",
+        cartProducts: "",
+      };
+      return { ...state, isLoggin, user };
 
     case SET_USER_INFO:
-      const { _id, name, phone, address, cartProducts } = action.payload;
-      const user = {
+      var { _id, name, phone, address, cartProducts } = action.payload;
+      var user = {
         _id,
         name,
         phone,

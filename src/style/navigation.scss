@@ -3,7 +3,7 @@
   grid-row: nav-s/nav-e;
 
   display: grid;
-  grid-template-columns: [logo-s] 1fr [logo-e links-s] 2fr [links-e store-info-s] 2fr[store-info-e sigin-s] 1fr [sigin-e];
+  grid-template-columns: [logo-s] 1fr [logo-e links-s] 3fr [links-e store-info-s] 2fr[store-info-e sigin-s] 1fr [sigin-e];
   align-items: center;
 
   font-size: 1.5rem;

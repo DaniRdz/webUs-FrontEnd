@@ -53,7 +53,12 @@ class NavigationContainer extends Component {
         {this.props.isLoggin ? (
           <div className="sigin-singup-links">
             {this.props.user.role === "admin" ? (
-              <a className="link">Ordenes</a>
+              <a
+                onClick={() => history.push("/administration/orders")}
+                className="link"
+              >
+                Ordenes
+              </a>
             ) : null}
             <a onClick={() => this.handleLogout()} className="link">
               Logout <i className="fas fa-sign-out-alt"></i>

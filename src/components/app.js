@@ -10,6 +10,7 @@ import Menu from "./menu-page/menu";
 import Review from "./review-page/review";
 import ShippingInfo from "./shipping-page/shipping-info";
 import Payment from "./payment-page/payment";
+import Orders from "./orders-page/orders";
 import NavigationContainer from "./navigation-container";
 import Footer from "./footer";
 
@@ -39,6 +40,7 @@ class App extends Component {
               component={ShippingInfo}
             />
             <Route exact path="/information/payment" component={Payment} />
+            <Route exact path="/administration/orders" component={Orders} />
           </Switch>
         </Router>
         <Footer />

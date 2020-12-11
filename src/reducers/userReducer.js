@@ -35,13 +35,14 @@ export default function (state = INITIAL_STATE, action) {
 
     case USER_AUNTHENTICATE:
       const { user, token } = action.payload;
-      const { _id, name, address, phone } = user;
+      const { _id, name, address, phone, role } = user;
       const newUser = {
         _id,
         token,
         name,
         address,
         phone,
+        role,
       };
 
       let isLoggin = false;

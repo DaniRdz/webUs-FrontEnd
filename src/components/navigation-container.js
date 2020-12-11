@@ -52,6 +52,9 @@ class NavigationContainer extends Component {
         </div>
         {this.props.isLoggin ? (
           <div className="sigin-singup-links">
+            {this.props.user.role === "admin" ? (
+              <a className="link">Ordenes</a>
+            ) : null}
             <a onClick={() => this.handleLogout()} className="link">
               Logout <i className="fas fa-sign-out-alt"></i>
             </a>
@@ -71,8 +74,8 @@ class NavigationContainer extends Component {
   }
 }
 function mapStateToProps(state) {
-  const { isLoggin } = state.user;
-  return { isLoggin };
+  const { isLoggin, user } = state.user;
+  return { isLoggin, user };
 }
 
 export default connect(mapStateToProps, actions)(NavigationContainer);

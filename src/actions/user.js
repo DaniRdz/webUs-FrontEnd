@@ -108,7 +108,7 @@ export function userAuthenticate(fields) {
         dispatch({ type: USER_AUNTHENTICATE, payload: response.data });
       })
       .catch((err) => {
-        console.log("userAutenticate erros", err);
+        console.log("userAutenticate error", err);
       });
   };
 }

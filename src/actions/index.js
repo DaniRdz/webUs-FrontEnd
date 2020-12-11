@@ -19,6 +19,8 @@ import {
   updateUser,
 } from "./user";
 
+import { getOrders } from "./orders";
+
 export {
   fetchMenuProducts,
   fetchMenuCategories,
@@ -35,4 +37,5 @@ export {
   userAuthenticate,
   userLogout,
   updateUser,
+  getOrders,
 };

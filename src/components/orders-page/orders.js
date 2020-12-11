@@ -1,6 +1,13 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+
+import * as actions from "../../actions";
 
 class Orders extends Component {
+  componentDidMount() {
+    this.props.getOrders();
+  }
+
   render() {
     return (
       <div className="orders">
@@ -10,4 +17,4 @@ class Orders extends Component {
   }
 }
 
-export default Orders;
+export default connect(null, actions)(Orders);

@@ -11,7 +11,21 @@ class Orders extends Component {
   render() {
     return (
       <div className="orders">
-        <h1>Orders goes here</h1>
+        <div className="orders-title">Lista de Ordenes</div>
+        <div className="orders-info">
+          <div className="orders-info-titles">
+            <div className="title">No. de Orden</div>
+            <div className="title">Info. de ususario</div>
+            <div className="title">Productos</div>
+            <div className="title">Cantidad</div>
+            <div className="title">Total</div>
+            <div className="title">Fecha</div>
+            <div className="title">Estatus</div>
+          </div>
+          <div className="orders-info-line-top"></div>
+          <div className="orders-info-list">List goes here</div>
+          <div className="orders-info-line-bottom"></div>
+        </div>
       </div>
     );
   }

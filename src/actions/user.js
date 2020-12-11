@@ -14,11 +14,11 @@ import {
 
 import axios from "axios";
 
-export function createOrder(userId) {
+export function createOrder(_id) {
   return function (dispatch) {
     axios
       .post("http://localhost:8080/orders", {
-        user: userId,
+        user: { _id },
       })
       .then((response) => {
         dispatch({ type: CREATE_ORDER, payload: response.data });

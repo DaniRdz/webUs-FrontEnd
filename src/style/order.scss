@@ -1,0 +1,43 @@
+.order {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  border-bottom: 1px solid $beauty-black;
+}
+
+.order {
+  & > * {
+    justify-self: center;
+    align-self: center;
+
+    font-size: 1.3rem;
+  }
+
+  &-user-info {
+    justify-self: start;
+    padding-left: 15px;
+  }
+  &-products {
+    justify-self: start;
+    padding-left: 15px;
+  }
+  &-total {
+    color: $soft-orage;
+    font-size: 2rem;
+  }
+  &-qty {
+    font-size: 1.5rem;
+  }
+}
+
+.order {
+  &-user-info,
+  &-products {
+    display: grid;
+    row-gap: 10px;
+  }
+}

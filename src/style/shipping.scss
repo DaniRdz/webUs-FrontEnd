@@ -6,7 +6,7 @@
 .shipping-info {
   display: grid;
   grid-template-columns: [s] 1fr [m] 1fr [e];
-  grid-template-rows: 70px 1fr;
+  grid-template-rows: 70px minmax(300px, 1fr);
   height: calc(100vh - 180px);
   padding: 0px 100px 0px 100px;
 

@@ -14,7 +14,7 @@
   .register-img {
     align-self: center;
     border-radius: 50px;
-    height: 500px;
+    height: 85%;
   }
 
   .register-form {
@@ -29,7 +29,7 @@
   grid-template-columns: [s] 1fr [m] 1fr [e];
   grid-template-rows: [title-s] 1fr [title-e name-s] 1fr [name-e email-s] 1fr [email-e password-s] 1fr [password-e] 1fr;
 
-  height: 500px;
+  height: 85%;
   width: 100%;
   border: 1px solid $beauty-black;
   border-radius: 50px;

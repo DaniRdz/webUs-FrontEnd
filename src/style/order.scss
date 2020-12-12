@@ -32,6 +32,9 @@
   &-qty {
     font-size: 1.5rem;
   }
+  &-status {
+    justify-self: end;
+  }
 }
 
 .order {
@@ -39,5 +42,60 @@
   &-products {
     display: grid;
     row-gap: 10px;
+  }
+}
+
+.order-status {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  width: 80%;
+
+  column-gap: 10px;
+
+  &-btns {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+
+    row-gap: 10px;
+
+    .status-btn {
+      background-color: $soft-white;
+      color: $beauty-black;
+      border: 1px solid $beauty-black;
+
+      border-radius: 50px;
+      cursor: pointer;
+
+      &:focus {
+        outline: none;
+      }
+
+      &:active {
+        transform: translateY(4px);
+      }
+    }
+
+    .active {
+      background-color: $soft-orage;
+      color: $soft-white;
+      border: 1px solid $beauty-black;
+    }
+  }
+}
+
+.order-status {
+  .trash-icon {
+    font-size: 2.5rem;
+    align-self: center;
+    justify-self: center;
+
+    cursor: pointer;
+
+    transition: 0.5s ease-in-out;
+
+    &:hover {
+      color: $warning;
+    }
   }
 }

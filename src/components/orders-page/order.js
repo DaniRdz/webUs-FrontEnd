@@ -35,7 +35,21 @@ class Order extends Component {
         <div className="order-qty">{count}</div>
         <div className="order-total">${subtotal}</div>
         <div className="order-date">{orderTime}</div>
-        <div className="oder-status">{orderStatus}</div>
+        <div className="order-status">
+          <div className="order-status-btns">
+            <button
+              className={`status-btn ${orderStatus === "wait" ? "active" : ""}`}
+            >
+              espera
+            </button>
+            <button
+              className={`status-btn ${orderStatus === "redy" ? "active" : ""}`}
+            >
+              listo
+            </button>
+          </div>
+          <i className="fas fa-trash trash-icon"></i>
+        </div>
       </div>
     );
   }

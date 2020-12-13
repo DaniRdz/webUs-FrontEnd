@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+
+import * as actions from "../../actions";
 
 class Order extends Component {
   renderProducts(items) {
@@ -39,11 +42,17 @@ class Order extends Component {
           <div className="order-status-btns">
             <button
               className={`status-btn ${orderStatus === "wait" ? "active" : ""}`}
+              onClick={() => {
+                this.props.changeStatusOrder(_id, "wait");
+              }}
             >
               espera
             </button>
             <button
               className={`status-btn ${orderStatus === "redy" ? "active" : ""}`}
+              onClick={() => {
+                this.props.changeStatusOrder(_id, "redy");
+              }}
             >
               listo
             </button>
@@ -55,4 +64,4 @@ class Order extends Component {
   }
 }
 
-export default Order;
+export default connect(null, actions)(Order);

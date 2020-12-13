@@ -1,4 +1,4 @@
-import { SET_ORDERS } from "../actions/types";
+import { SET_ORDERS, CHANGE_STATUS_ORDER } from "../actions/types";
 
 const INITIAL_STATE = {
   orders: [],
@@ -11,6 +11,10 @@ export default function (state = INITIAL_STATE, action) {
       console.log(action.payload);
 
       return { ...state, orders };
+
+    case CHANGE_STATUS_ORDER:
+      console.log(action.payload);
+      return { ...state };
 
     default:
       return state;

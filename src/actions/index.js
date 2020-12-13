@@ -19,7 +19,7 @@ import {
   updateUser,
 } from "./user";
 
-import { getOrders } from "./orders";
+import { getOrders, changeStatusOrder } from "./orders";
 
 export {
   fetchMenuProducts,
@@ -38,4 +38,5 @@ export {
   userLogout,
   updateUser,
   getOrders,
+  changeStatusOrder,
 };

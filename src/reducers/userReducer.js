@@ -96,8 +96,18 @@ export default function (state = INITIAL_STATE, action) {
       return { ...state, cartProductId: action.payload };
 
     case SET_CART_PRODUCTS:
+      if (!state.isLoggin) {
+        var user = {
+          name: "",
+          phone: "",
+          address: "",
+          cartProducts: "",
+        };
+      } else {
+        var user = state.user;
+      }
       const cartProductId = "";
-      return { ...state, cartProducts: action.payload, cartProductId };
+      return { ...state, cartProducts: action.payload, cartProductId, user };
 
     case REMOVE_CART_PRODUCT:
       const pos = action.payload;

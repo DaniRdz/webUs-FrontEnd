@@ -4,6 +4,27 @@ import { connect } from "react-redux";
 import * as actions from "../../actions";
 
 class Order extends Component {
+  constructor(props) {
+    super(props);
+    if (this.props.order.orderStatus === "wait") {
+      this.state = {
+        isRedy: false,
+      };
+    } else {
+      this.state = {
+        isRedy: true,
+      };
+    }
+  }
+
+  handleClick(_id, status) {
+    if (!this.state.isRedy) {
+      this.setState({ isRedy: true });
+    } else {
+      this.setState({ isRedy: false });
+    }
+    this.props.changeStatusOrder(_id, status);
+  }
   renderProducts(items) {
     return items.map((item) => {
       const { quantity, product } = item;
@@ -41,17 +62,17 @@ class Order extends Component {
         <div className="order-status">
           <div className="order-status-btns">
             <button
-              className={`status-btn ${orderStatus === "wait" ? "active" : ""}`}
+              className={`status-btn ${!this.state.isRedy ? "active" : ""}`}
               onClick={() => {
-                this.props.changeStatusOrder(_id, "wait");
+                this.handleClick(_id, "wait");
               }}
             >
               espera
             </button>
             <button
-              className={`status-btn ${orderStatus === "redy" ? "active" : ""}`}
+              className={`status-btn ${this.state.isRedy ? "active" : ""}`}
               onClick={() => {
-                this.props.changeStatusOrder(_id, "redy");
+                this.handleClick(_id, "redy");
               }}
             >
               listo

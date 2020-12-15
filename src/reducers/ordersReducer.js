@@ -17,8 +17,18 @@ export default function (state = INITIAL_STATE, action) {
       return { ...state, orders };
 
     case CHANGE_STATUS_ORDER:
-      console.log(action.payload);
-      return { ...state };
+      var orders = [];
+      state.orders.map((order) => {
+        if (order._id === action.payload) {
+          if (order.orderStatus === "wait") {
+            order.orderStatus = "redy";
+          } else {
+            order.orderStatus = "wait";
+          }
+        }
+        orders.push(order);
+      });
+      return { ...state, orders };
 
     case DELETE_ORDER:
       const _id = action.payload;

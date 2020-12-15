@@ -25,8 +25,9 @@ export function changeStatusOrder(_id, orderStatus) {
       .then((response) => {
         dispatch({
           type: CHANGE_STATUS_ORDER,
-          payload: response.data,
+          payload: _id,
         });
+        console.log(response.data);
       })
       .catch((err) => {
         console.log("changeStatusOrder error", err);
@@ -43,6 +44,7 @@ export function deleteOrder(_id) {
           type: DELETE_ORDER,
           payload: _id,
         });
+        console.log(response.data);
       })
       .catch((err) => {
         console.log("deleteOrder error", err);

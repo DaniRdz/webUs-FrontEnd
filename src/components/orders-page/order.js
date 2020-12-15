@@ -57,7 +57,9 @@ class Order extends Component {
               listo
             </button>
           </div>
-          <i className="fas fa-trash trash-icon"></i>
+          <a className="trash-icon" onClick={() => this.props.deleteOrder(_id)}>
+            <i className="fas fa-trash "></i>
+          </a>
         </div>
       </div>
     );

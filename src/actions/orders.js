@@ -1,4 +1,4 @@
-import { SET_ORDERS, CHANGE_STATUS_ORDER } from "./types";
+import { SET_ORDERS, CHANGE_STATUS_ORDER, DELETE_ORDER } from "./types";
 
 import axios from "axios";
 
@@ -30,6 +30,22 @@ export function changeStatusOrder(_id, orderStatus) {
       })
       .catch((err) => {
         console.log("changeStatusOrder error", err);
+      });
+  };
+}
+
+export function deleteOrder(_id) {
+  return function (dispatch) {
+    axios
+      .delete(`http://localhost:8080/orders/${_id}`)
+      .then((response) => {
+        dispatch({
+          type: DELETE_ORDER,
+          payload: _id,
+        });
+      })
+      .catch((err) => {
+        console.log("deleteOrder error", err);
       });
   };
 }

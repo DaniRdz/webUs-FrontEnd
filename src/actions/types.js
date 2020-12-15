@@ -18,3 +18,4 @@ export const CREATE_ORDER = "CREATE_ORDER";
 
 export const SET_ORDERS = "SET_ORDERS";
 export const CHANGE_STATUS_ORDER = "CHANGE_STATUS_ORDER";
+export const DELETE_ORDER = "DELETE_ORDER";

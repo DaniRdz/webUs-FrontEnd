@@ -13,6 +13,7 @@ import Payment from "./payment-page/payment";
 import Orders from "./orders-page/orders";
 import NavigationContainer from "./navigation-container";
 import Footer from "./footer";
+import NoMatch from "./no-match-page/no-match";
 
 import history from "../history";
 import * as actions from "../actions";
@@ -20,6 +21,10 @@ import * as actions from "../actions";
 class App extends Component {
   componentDidMount() {
     this.props.setCartProducts();
+  }
+
+  authorizadePage() {
+    return [<Route exact path="/administration/orders" component={Orders} />];
   }
 
   render() {
@@ -40,7 +45,8 @@ class App extends Component {
               component={ShippingInfo}
             />
             <Route exact path="/information/payment" component={Payment} />
-            <Route exact path="/administration/orders" component={Orders} />
+            {this.props.isLoggin ? this.authorizadePage() : null}
+            <Route component={NoMatch} />
           </Switch>
         </Router>
         <Footer />
@@ -49,4 +55,10 @@ class App extends Component {
   }
 }
 
-export default connect(null, actions)(App);
+function mapStateToProps(state) {
+  const { isLoggin } = state.user;
+
+  return { isLoggin };
+}
+
+export default connect(mapStateToProps, actions)(App);

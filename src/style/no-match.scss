@@ -1,0 +1,18 @@
+.no-match {
+  grid-column: s/e;
+  grid-row: content-s/content-e;
+  height: calc(100vh - 180px);
+
+  padding: 0px 100px 0px 100px;
+}
+
+.no-match {
+  display: grid;
+
+  justify-content: center;
+
+  .message {
+    padding-top: 50px;
+    font-size: 4rem;
+  }
+}

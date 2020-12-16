@@ -24,7 +24,7 @@ class App extends Component {
   }
 
   authorizadePage() {
-    return [<Route exact path="/administration/orders" component={Orders} />];
+    return <Route exact path="/administration/orders" component={Orders} />;
   }
 
   render() {

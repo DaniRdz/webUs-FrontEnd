@@ -17,13 +17,13 @@ class Order extends Component {
     }
   }
 
-  handleClick(_id, status) {
+  handleClick(_id, status, token) {
     if (!this.state.isRedy) {
       this.setState({ isRedy: true });
     } else {
       this.setState({ isRedy: false });
     }
-    this.props.changeStatusOrder(_id, status);
+    this.props.changeStatusOrder(_id, status, token);
   }
   renderProducts(items) {
     return items.map((item) => {
@@ -41,6 +41,7 @@ class Order extends Component {
     const { _id, user, orderStatus, orderTime } = this.props.order;
     const { name, phone, address, cartProducts } = user;
     const { subtotal, items } = cartProducts;
+    const { token } = this.props.user;
 
     let count = 0;
     items.map((item) => {
@@ -64,7 +65,7 @@ class Order extends Component {
             <button
               className={`status-btn ${!this.state.isRedy ? "active" : ""}`}
               onClick={() => {
-                this.handleClick(_id, "wait");
+                this.handleClick(_id, "wait", token);
               }}
             >
               espera
@@ -72,13 +73,16 @@ class Order extends Component {
             <button
               className={`status-btn ${this.state.isRedy ? "active" : ""}`}
               onClick={() => {
-                this.handleClick(_id, "redy");
+                this.handleClick(_id, "redy", token);
               }}
             >
               listo
             </button>
           </div>
-          <a className="trash-icon" onClick={() => this.props.deleteOrder(_id)}>
+          <a
+            className="trash-icon"
+            onClick={() => this.props.deleteOrder(_id, token)}
+          >
             <i className="fas fa-trash "></i>
           </a>
         </div>
@@ -86,5 +90,9 @@ class Order extends Component {
     );
   }
 }
+function mapStateToProps(state) {
+  const { user } = state.user;
+  return { user };
+}
 
-export default connect(null, actions)(Order);
+export default connect(mapStateToProps, actions)(Order);

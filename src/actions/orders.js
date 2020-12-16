@@ -18,10 +18,16 @@ export function getOrders() {
   };
 }
 
-export function changeStatusOrder(_id, orderStatus) {
+export function changeStatusOrder(_id, orderStatus, token) {
   return function (dispatch) {
     axios
-      .put(`http://localhost:8080/orders/${_id}`, { orderStatus })
+      .put(
+        `http://localhost:8080/orders/${_id}`,
+        { orderStatus },
+        {
+          headers: { "x-access-token": token },
+        }
+      )
       .then((response) => {
         dispatch({
           type: CHANGE_STATUS_ORDER,
@@ -35,10 +41,12 @@ export function changeStatusOrder(_id, orderStatus) {
   };
 }
 
-export function deleteOrder(_id) {
+export function deleteOrder(_id, token) {
   return function (dispatch) {
     axios
-      .delete(`http://localhost:8080/orders/${_id}`)
+      .delete(`http://localhost:8080/orders/${_id}`, {
+        headers: { "x-access-token": token },
+      })
       .then((response) => {
         dispatch({
           type: DELETE_ORDER,

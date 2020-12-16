@@ -11,6 +11,7 @@ import Review from "./review-page/review";
 import ShippingInfo from "./shipping-page/shipping-info";
 import Payment from "./payment-page/payment";
 import Orders from "./orders-page/orders";
+import UserInfo from "./info-page/user-info";
 import NavigationContainer from "./navigation-container";
 import Footer from "./footer";
 import NoMatch from "./no-match-page/no-match";
@@ -46,6 +47,7 @@ class App extends Component {
             />
             <Route exact path="/information/payment" component={Payment} />
             {this.props.isLoggin ? this.authorizadePage() : null}
+            <Route exact path="/user/information" component={UserInfo} />
             <Route component={NoMatch} />
           </Switch>
         </Router>

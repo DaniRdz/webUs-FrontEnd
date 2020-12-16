@@ -13,6 +13,7 @@ class NavigationContainer extends Component {
     history.push("/");
   }
   render() {
+    const { role } = this.props.user;
     return (
       <div className="navigation-container">
         <Logo />
@@ -32,7 +33,14 @@ class NavigationContainer extends Component {
           <a href="#contact" onClick={() => history.push("/")} className="link">
             Contacto
           </a>
-          {this.props.isLoggin ? <a className="link">Informacion</a> : null}
+          {this.props.isLoggin && role === "user" ? (
+            <a
+              onClick={() => history.push("/user/information")}
+              className="link"
+            >
+              Informacion
+            </a>
+          ) : null}
         </div>
         <div className="store-info">
           <div className="store-info-opennig">

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import UserOrder from "./user-order";
+import UserInfoForm from "./user-info-form";
 
 import * as actions from "../../actions";
 
@@ -32,8 +33,8 @@ class UserInfo extends Component {
           </div>
         </div>
         <div className="user-info">
-          <div className="title">Informacion de Usuario</div>
-          <div className="user-info__info"></div>
+          <div className="user-info-title">Informacion de Usuario</div>
+          <UserInfoForm />
         </div>
       </div>
     );

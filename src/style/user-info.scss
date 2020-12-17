@@ -8,13 +8,26 @@
 
 .user-info-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: [s] 1fr [m] 1fr [e];
+  grid-template-rows: [s] minmax(100px, 1fr) [e];
+
+  column-gap: 10%;
+
+  .user-orders {
+    grid-column: s/m;
+    grid-row: s/e;
+  }
+
+  .user-info {
+    grid-column: m/e;
+    grid-row: s/e;
+  }
 }
 
 .user-orders {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 70px minmax(50px, 1fr);
+  grid-template-rows: 70px minmax(100px, 1fr);
 
   &-title {
     font-size: 2.5rem;
@@ -59,11 +72,8 @@
   &-line-bottom {
     border-bottom: 1px solid $beauty-black;
   }
-  &-line-top {
-    grid-row: titles-s/titles-e;
-  }
+
   &-list {
-    grid-row: list-s/list-e;
     overflow-y: scroll;
   }
 
@@ -94,5 +104,15 @@
 
   .user-order-total {
     font-size: 2rem;
+  }
+}
+
+.user-info {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 70px minmax(100px, 1fr);
+
+  &-title {
+    font-size: 2.5rem;
   }
 }

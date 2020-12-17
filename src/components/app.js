@@ -25,7 +25,10 @@ class App extends Component {
   }
 
   authorizadePage() {
-    return <Route exact path="/administration/orders" component={Orders} />;
+    return [
+      <Route key="0" exact path="/administration/orders" component={Orders} />,
+      <Route key="1" exact path="/user/information" component={UserInfo} />,
+    ];
   }
 
   render() {
@@ -47,7 +50,6 @@ class App extends Component {
             />
             <Route exact path="/information/payment" component={Payment} />
             {this.props.isLoggin ? this.authorizadePage() : null}
-            <Route exact path="/user/information" component={UserInfo} />
             <Route component={NoMatch} />
           </Switch>
         </Router>

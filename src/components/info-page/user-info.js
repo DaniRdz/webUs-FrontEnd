@@ -1,6 +1,19 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
-export default class UserInfo extends Component {
+import UserOrder from "./user-order";
+
+import * as actions from "../../actions";
+
+class UserInfo extends Component {
+  componentDidMount() {
+    this.props.getUserOrders();
+  }
+  renderOrders() {
+    return this.props.userOrders.map((order) => {
+      return <UserOrder key={order._id} order={order} />;
+    });
+  }
   render() {
     return (
       <div className="user-info-container">
@@ -14,7 +27,7 @@ export default class UserInfo extends Component {
               <div className="title">Estatus</div>
             </div>
             <div className="user-orders-info-line-top"></div>
-            <div className="user-orders-info-list">list</div>
+            <div className="user-orders-info-list">{this.renderOrders()}</div>
             <div className="user-orders-info-line-bottom"></div>
           </div>
         </div>
@@ -26,3 +39,11 @@ export default class UserInfo extends Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  const { userOrders } = state.user;
+
+  return { userOrders };
+}
+
+export default connect(mapStateToProps, actions)(UserInfo);

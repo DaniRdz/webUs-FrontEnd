@@ -6,6 +6,7 @@ import {
   SET_USER_INFO,
   UPDATE_CART,
   CREATE_ORDER,
+  GET_USER_ORDERS,
   USER_REGISTER,
   USER_AUNTHENTICATE,
   USER_LOG_OUT,
@@ -22,10 +23,18 @@ const INITIAL_STATE = {
   },
   cartProductId: "",
   isLoggin: false,
+  userOrders: [],
 };
 
 export default function (state = INITIAL_STATE, action) {
   switch (action.type) {
+    case GET_USER_ORDERS:
+      var { _id } = state.user;
+      const orders = action.payload;
+      const userOrders = orders.filter((order) => _id === order.user._id);
+
+      return { ...state, userOrders };
+
     case CREATE_ORDER:
       console.log(action.payload);
       return { ...state };

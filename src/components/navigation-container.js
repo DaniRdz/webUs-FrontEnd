@@ -33,7 +33,7 @@ class NavigationContainer extends Component {
           <a href="#contact" onClick={() => history.push("/")} className="link">
             Contacto
           </a>
-          {this.props.isLoggin && role === "user" ? (
+          {this.props.isLoggin && role !== "admin" ? (
             <a
               onClick={() => history.push("/user/information")}
               className="link"

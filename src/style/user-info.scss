@@ -77,3 +77,22 @@
     justify-self: center;
   }
 }
+
+.user-order {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  border-bottom: 1px solid $beauty-black;
+
+  & > * {
+    justify-self: center;
+    font-size: 1.5rem;
+  }
+
+  .user-order-total {
+    font-size: 2rem;
+  }
+}

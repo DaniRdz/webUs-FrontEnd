@@ -15,6 +15,7 @@ export const USER_AUNTHENTICATE = "USER_AUNTHENTICATE";
 export const UPDATE_USER = "UPDATE_USER;";
 export const USER_LOG_OUT = "USER_LOG_OUT";
 export const CREATE_ORDER = "CREATE_ORDER";
+export const GET_USER_ORDERS = "GET_USER_ORDERS";
 
 export const SET_ORDERS = "SET_ORDERS";
 export const CHANGE_STATUS_ORDER = "CHANGE_STATUS_ORDER";

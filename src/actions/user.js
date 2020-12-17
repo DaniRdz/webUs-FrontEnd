@@ -10,9 +10,26 @@ import {
   USER_AUNTHENTICATE,
   USER_LOG_OUT,
   UPDATE_USER,
+  GET_USER_ORDERS,
 } from "./types";
 
 import axios from "axios";
+
+export function getUserOrders() {
+  return function (dispatch) {
+    axios
+      .get("http://localhost:8080/orders")
+      .then((response) => {
+        dispatch({
+          type: GET_USER_ORDERS,
+          payload: response.data.orders,
+        });
+      })
+      .catch((err) => {
+        console.log("getUserOrders error", err);
+      });
+  };
+}
 
 export function createOrder(_id) {
   return function (dispatch) {

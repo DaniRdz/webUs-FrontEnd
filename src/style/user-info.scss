@@ -116,3 +116,23 @@
     font-size: 2.5rem;
   }
 }
+
+.user-info-form {
+  display: grid;
+  grid-template-columns: [s] 1fr [e];
+  grid-template-rows: 1fr 1fr 0.75fr 1fr 1fr;
+
+  & > * {
+    .input {
+      width: 94%;
+    }
+  }
+
+  &-address-title {
+    font-size: 2.5rem;
+  }
+
+  &-btn {
+    justify-self: center;
+  }
+}

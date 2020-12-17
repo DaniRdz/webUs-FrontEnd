@@ -7,6 +7,10 @@ import UserInfoForm from "./user-info-form";
 import * as actions from "../../actions";
 
 class UserInfo extends Component {
+  onSubmit = (fields) => {
+    const { _id } = this.props.user;
+    this.props.updateUser(_id, fields);
+  };
   componentDidMount() {
     this.props.getUserOrders();
   }
@@ -34,7 +38,7 @@ class UserInfo extends Component {
         </div>
         <div className="user-info">
           <div className="user-info-title">Informacion de Usuario</div>
-          <UserInfoForm />
+          <UserInfoForm onSubmit={this.onSubmit} />
         </div>
       </div>
     );
@@ -42,9 +46,9 @@ class UserInfo extends Component {
 }
 
 function mapStateToProps(state) {
-  const { userOrders } = state.user;
+  const { userOrders, user } = state.user;
 
-  return { userOrders };
+  return { userOrders, user };
 }
 
 export default connect(mapStateToProps, actions)(UserInfo);

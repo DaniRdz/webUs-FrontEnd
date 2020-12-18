@@ -5,32 +5,31 @@
 
 .menu-container {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: [link-s] 50px [links-e products-s] 1fr [products-e];
+  grid-template-columns: [s] 1fr [e];
+  grid-template-rows: [links-s] 50px [links-e products-s] 1fr [products-e];
   height: calc(100vh - 180px);
 
   .fiter-bar-links-container {
     justify-self: center;
-    grid-row: link-s/link-e;
-    grid-column: 1/-1;
+    grid-row: links-s/links-e;
+    grid-column: s/e;
   }
 
   .products {
-    /* justify-self: center; */
     grid-row: products-s/products-e;
-    grid-column: 1/-1;
+    grid-column: s/e;
   }
 
   .menu-cart {
     justify-self: end;
-    grid-row: link-s/product-e;
+    grid-row: links-s/products-e;
     grid-column: 1/-1;
   }
   .menu-container-btn {
     position: relative;
     justify-self: end;
     align-self: start;
-    grid-row: link-s/link-e;
+    grid-row: links-s/links-e;
     grid-column: 1/-1;
   }
 }

@@ -6,7 +6,7 @@
 .review {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 70px minmax(300px, 1fr) 100px;
+  grid-template-rows: 70px minmax(200px, 1fr) 100px;
   height: calc(100vh - 180px);
   padding: 0px 100px 0px 100px;
 
@@ -66,7 +66,7 @@
 .review-info {
   display: grid;
   grid-template-columns: [name-s] 1fr [name-e qty-s] 1fr [qty-e price-s] 1fr [price-e];
-  grid-template-rows: [title-s] 70px [title-e products-s] 200px [products-e total-s] 100px [total-e];
+  grid-template-rows: [title-s] 70px [title-e products-s] minmax(100px, 1fr) [products-e total-s] 100px [total-e];
 
   &-name {
     grid-row: title-s/title-e;

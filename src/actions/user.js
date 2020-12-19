@@ -18,7 +18,7 @@ import axios from "axios";
 export function getUserOrders() {
   return function (dispatch) {
     axios
-      .get("http://localhost:8080/orders")
+      .get("https://rdz-core-webus-api.herokuapp.com/orders")
       .then((response) => {
         dispatch({
           type: GET_USER_ORDERS,
@@ -34,7 +34,7 @@ export function getUserOrders() {
 export function createOrder(_id) {
   return function (dispatch) {
     axios
-      .post("http://localhost:8080/orders", {
+      .post("https://rdz-core-webus-api.herokuapp.com/orders", {
         user: { _id },
       })
       .then((response) => {
@@ -49,7 +49,7 @@ export function createOrder(_id) {
 export function updateCart(_id, products) {
   return function (dispatch) {
     axios
-      .put(`http://localhost:8080/cart/cart-update/${_id}`, {
+      .put(`https://rdz-core-webus-api.herokuapp.com/cart/cart-update/${_id}`, {
         items: products,
       })
       .then((response) => {
@@ -64,7 +64,7 @@ export function updateCart(_id, products) {
 export function saveCart(products) {
   return function (dispatch) {
     axios
-      .post("http://localhost:8080/cart/add-to-cart", {
+      .post("https://rdz-core-webus-api.herokuapp.com/cart/add-to-cart", {
         items: products,
       })
       .then((response) => {
@@ -80,7 +80,7 @@ export function setUserInfo(fields, cartId) {
   const { name, phone, address } = fields;
   return function (dispatch) {
     axios
-      .post("http://localhost:8080/users/register", {
+      .post("https://rdz-core-webus-api.herokuapp.com/users/register", {
         name,
         phone,
         address,
@@ -99,7 +99,7 @@ export function userRegister(fields) {
   const { name, email, password } = fields;
   return function (dispatch) {
     axios
-      .post("http://localhost:8080/users/register", {
+      .post("https://rdz-core-webus-api.herokuapp.com/users/register", {
         name,
         email,
         password,
@@ -117,7 +117,7 @@ export function userAuthenticate(fields) {
   const { email, password } = fields;
   return function (dispatch) {
     axios
-      .post("http://localhost:8080/users/authenticate", {
+      .post("https://rdz-core-webus-api.herokuapp.com/users/authenticate", {
         email,
         password,
       })
@@ -134,7 +134,7 @@ export function updateUser(_id, fields, cartId) {
   const { phone, address } = fields;
   return function (dispatch) {
     axios
-      .put(`http://localhost:8080/users/${_id}`, {
+      .put(`https://rdz-core-webus-api.herokuapp.com/users/${_id}`, {
         phone,
         address,
         cartProducts: cartId,

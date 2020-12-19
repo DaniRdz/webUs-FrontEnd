@@ -5,7 +5,7 @@ import axios from "axios";
 export function getOrders() {
   return function (dispatch) {
     axios
-      .get("http://localhost:8080/orders")
+      .get("https://rdz-core-webus-api.herokuapp.com/orders")
       .then((response) => {
         dispatch({
           type: SET_ORDERS,
@@ -22,7 +22,7 @@ export function changeStatusOrder(_id, orderStatus, token) {
   return function (dispatch) {
     axios
       .put(
-        `http://localhost:8080/orders/${_id}`,
+        `https://rdz-core-webus-api.herokuapp.com/orders/${_id}`,
         { orderStatus },
         {
           headers: { "x-access-token": token },
@@ -33,7 +33,6 @@ export function changeStatusOrder(_id, orderStatus, token) {
           type: CHANGE_STATUS_ORDER,
           payload: _id,
         });
-        console.log(response.data);
       })
       .catch((err) => {
         console.log("changeStatusOrder error", err);
@@ -44,7 +43,7 @@ export function changeStatusOrder(_id, orderStatus, token) {
 export function deleteOrder(_id, token) {
   return function (dispatch) {
     axios
-      .delete(`http://localhost:8080/orders/${_id}`, {
+      .delete(`https://rdz-core-webus-api.herokuapp.com/orders/${_id}`, {
         headers: { "x-access-token": token },
       })
       .then((response) => {
@@ -52,7 +51,6 @@ export function deleteOrder(_id, token) {
           type: DELETE_ORDER,
           payload: _id,
         });
-        console.log(response.data);
       })
       .catch((err) => {
         console.log("deleteOrder error", err);

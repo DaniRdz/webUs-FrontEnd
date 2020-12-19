@@ -40,7 +40,6 @@ class RegisterForm extends Component {
         </div>
         <Field
           className="register-form-btn"
-          onClick={() => console.log("usuario registrado")}
           type="submit"
           title="Registrarse"
           name="register"

@@ -31,8 +31,6 @@ export default function (state = INIT_STATE, action) {
       return { ...state, categories };
 
     case FILTER_PRODUCTS_WITH_CATEGORY_ID:
-      console.log(action.payload, "holaaaaaa");
-
       var filteredProducts = [];
       state.menuProducts.map((product) => {
         if (product.belogsTo.includes(action.payload)) {

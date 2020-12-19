@@ -36,7 +36,6 @@ export default function (state = INITIAL_STATE, action) {
       return { ...state, userOrders };
 
     case CREATE_ORDER:
-      console.log(action.payload);
       return { ...state };
 
     case USER_REGISTER:
@@ -96,12 +95,9 @@ export default function (state = INITIAL_STATE, action) {
       return { ...state, user: updateUser };
 
     case UPDATE_CART:
-      console.log(action.payload);
-
       return { ...state };
 
     case SAVE_CART:
-      console.log(action.payload);
       return { ...state, cartProductId: action.payload };
 
     case SET_CART_PRODUCTS:

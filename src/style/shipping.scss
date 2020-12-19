@@ -61,11 +61,14 @@
 }
 
 .shipping-form {
+  .input {
+    width: 90%;
+  }
   &-name,
   &-phone,
   &-address {
     .input {
-      width: 97%;
+      width: 95%;
     }
   }
 }

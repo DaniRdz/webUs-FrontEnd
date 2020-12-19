@@ -70,10 +70,13 @@
 }
 
 .payment-form {
+  .input {
+    width: 90%;
+  }
   &-name,
   &-number-card {
     .input {
-      width: 97%;
+      width: 95%;
     }
   }
 }

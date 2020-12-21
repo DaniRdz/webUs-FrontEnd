@@ -27,15 +27,17 @@ class SignIn extends Component {
             backgroundSize: "cover",
           }}
         />
-
-        <SignInForm onSubmit={this.onSubmit} />
+        <SignInForm
+          onSubmit={this.onSubmit}
+          message={this.props.errorMessage}
+        />
       </div>
     );
   }
 }
 function mapStateToProps(state) {
-  const { isLoggin } = state.user;
-  return { isLoggin };
+  const { isLoggin, errorMessage } = state.user;
+  return { isLoggin, errorMessage };
 }
 
 export default connect(mapStateToProps, actions)(SignIn);

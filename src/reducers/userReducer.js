@@ -23,6 +23,7 @@ const INITIAL_STATE = {
   },
   cartProductId: "",
   isLoggin: false,
+  errorMessage: "",
   userOrders: [],
 };
 
@@ -42,24 +43,28 @@ export default function (state = INITIAL_STATE, action) {
       return { ...state };
 
     case USER_AUNTHENTICATE:
-      const { user, token } = action.payload;
-      const { _id, name, address, phone, role } = user;
-      const newUser = {
-        _id,
-        token,
-        name,
-        address,
-        phone,
-        role,
-      };
-
       let isLoggin = false;
+      let newUser = {};
+      let errorMessage = "";
       const { status } = action.payload;
       if (status === "ok") {
         isLoggin = true;
+        const { user, token } = action.payload;
+        const { _id, name, address, phone, role } = user;
+        newUser = {
+          _id,
+          token,
+          name,
+          address,
+          phone,
+          role,
+        };
+      } else {
+        const { message } = action.payload;
+        errorMessage = message;
       }
 
-      return { ...state, isLoggin, user: newUser };
+      return { ...state, isLoggin, user: newUser, errorMessage };
 
     case USER_LOG_OUT:
       var user = {

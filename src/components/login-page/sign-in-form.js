@@ -7,7 +7,7 @@ import history from "../../history";
 
 class SignInForm extends Component {
   render() {
-    const { handleSubmit } = this.props;
+    const { handleSubmit, message } = this.props;
     return (
       <form onSubmit={handleSubmit} className="sign-in-form">
         <div className="sign-in-form-title">¡Bienvenido!</div>
@@ -25,6 +25,7 @@ class SignInForm extends Component {
           name="password"
           component={FormInput}
         />
+        <div className="sign-in-form-error-msg">{message}</div>
         <Field
           className="sign-in-form-btn"
           type="submit"

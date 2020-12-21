@@ -24,7 +24,7 @@
 .sign-in-form {
   display: grid;
 
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
 
   height: 85%;
   width: 400px;
@@ -35,9 +35,13 @@
   &-email,
   &-password,
   &-btn,
-  &-register {
+  &-register,
+  &-error-msg {
     align-self: center;
     justify-self: center;
+  }
+  &-error-msg {
+    font-size: 1.5rem;
   }
 
   &-title {

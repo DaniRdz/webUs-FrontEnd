@@ -20,6 +20,7 @@
 
   .welcome-container {
     grid-template-columns: [s] 1fr [e];
+    padding: 25px;
   }
 
   .contact-wrapper {
@@ -32,7 +33,7 @@
     grid-template-rows: 1fr 3fr;
 
     .about-us-info {
-      padding-bottom: 30px;
+      padding: 30px 25px 30px 25px;
       .about-us-content {
         font-size: 1.5rem;
       }
@@ -109,8 +110,12 @@
 
   .menu-cart {
     width: 370px;
-    @media screen and (max-width: 370px) {
+    @media (max-width: 370px) {
       width: 100%;
+
+      .menu-cart-content {
+        height: 100%;
+      }
     }
     .menu-cart-products {
       padding-left: 20px;

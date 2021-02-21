@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import moment from "moment";
 
 import * as actions from "../../actions";
 
@@ -59,7 +60,9 @@ class Order extends Component {
         <div className="order-products">{this.renderProducts(items)}</div>
         <div className="order-qty">{count}</div>
         <div className="order-total">${subtotal}</div>
-        <div className="order-date">{orderTime}</div>
+        <div className="order-date">
+          {moment(orderTime).format("MMMM Do YYYY, h:mm:ss a")}
+        </div>
         <div className="order-status">
           <div className="order-status-btns">
             <button
